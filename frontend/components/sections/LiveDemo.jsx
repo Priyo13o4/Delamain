@@ -4,14 +4,20 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Button } from '@/components/ui/button'
 import { MessageSquare, Zap, AlertCircle } from 'lucide-react'
-import { useRouter } from 'next/navigation'
 
 export default function LiveDemo() {
-  const router = useRouter()
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   })
+
+  const handleLaunchChat = () => {
+    // Trigger chatbot to open
+    const chatButton = document.querySelector('[data-chatbot-trigger]')
+    if (chatButton) {
+      chatButton.click()
+    }
+  }
 
   const examplePrompts = [
     '"Check my vehicle status"',
@@ -89,7 +95,7 @@ export default function LiveDemo() {
             <Button
               size="lg"
               className="text-xl px-12 py-6 font-bold shadow-2xl glow group"
-              onClick={() => router.push('/demo')}
+              onClick={handleLaunchChat}
               data-testid="launch-demo-btn"
             >
               <Zap className="w-6 h-6 mr-2 group-hover:animate-pulse" />
@@ -118,12 +124,12 @@ export default function LiveDemo() {
                   <span className="text-xs text-green-500">Online</span>
                 </div>
               </div>
-              <div className="bg-navy-slate rounded-lg p-3 text-left">
-                <p className="text-sm text-gray-300">
+              <div className="bg-neutral-900 rounded-lg p-3 text-left">
+                <p className="text-sm text-neutral-300">
                   Hello! I'm The Conductor, your AI fleet assistant. How can I help you today?
                 </p>
               </div>
-              <div className="mt-3 flex items-center gap-2 text-gray-500 text-xs">
+              <div className="mt-3 flex items-center gap-2 text-neutral-500 text-xs">
                 <div className="flex gap-1">
                   <span className="w-2 h-2 rounded-full bg-neutral-500 animate-bounce" style={{ animationDelay: '0s' }}></span>
                   <span className="w-2 h-2 rounded-full bg-neutral-500 animate-bounce" style={{ animationDelay: '0.2s' }}></span>

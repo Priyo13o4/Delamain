@@ -5,7 +5,9 @@ import { MessageSquare, X, Zap, CheckCircle2, AlertCircle } from 'lucide-react'
 
 export default function ChatbotWidget() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isMinimized, setIsMinimized] = useState(false)
   const [chatbotLoaded, setChatbotLoaded] = useState(false)
+  const [copiedPrompt, setCopiedPrompt] = useState(null)
   const chatInstanceRef = useRef(null)
 
   useEffect(() => {
@@ -42,6 +44,19 @@ export default function ChatbotWidget() {
     }
   }, [])
 
+  // Prevent background scroll when chatbot is open
+  useEffect(() => {
+    if (isOpen && !isMinimized) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [isOpen, isMinimized])
+
   useEffect(() => {
     // Initialize chat when opened
     if (isOpen && chatbotLoaded && !chatInstanceRef.current) {
@@ -62,19 +77,14 @@ export default function ChatbotWidget() {
     "Find nearest service centers",
   ]
 
-  const handlePromptClick = (prompt) => {
-    // Send the prompt to the chatbot by programmatically filling the input
-    const chatInput = document.querySelector('#watsonx-chatbot-container input[type="text"], #watsonx-chatbot-container textarea')
-    if (chatInput) {
-      chatInput.value = prompt
-      chatInput.dispatchEvent(new Event('input', { bubbles: true }))
-      // Trigger form submission if there's a submit button
-      setTimeout(() => {
-        const submitBtn = document.querySelector('#watsonx-chatbot-container button[type="submit"]')
-        if (submitBtn) {
-          submitBtn.click()
-        }
-      }, 100)
+  const handlePromptClick = async (prompt) => {
+    // Copy prompt to clipboard since IBM Watson doesn't expose API for programmatic messaging
+    try {
+      await navigator.clipboard.writeText(prompt)
+      setCopiedPrompt(prompt)
+      setTimeout(() => setCopiedPrompt(null), 2000)
+    } catch (err) {
+      console.error('Failed to copy prompt:', err)
     }
   }
 
@@ -97,14 +107,30 @@ export default function ChatbotWidget() {
           className="fixed bottom-6 right-6 w-16 h-16 bg-teal hover:bg-teal-dark rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 z-50"
           aria-label="Open chat"
         >
-          <MessageSquare className="w-7 h-7 text-white" />
+          <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+          </svg>
+          <span className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full animate-pulse"></span>
+        </button>
+      )}
+
+      {/* Minimized Chat Button */}
+      {isOpen && isMinimized && (
+        <button
+          onClick={() => setIsMinimized(false)}
+          className="fixed bottom-6 right-6 w-16 h-16 bg-teal hover:bg-teal-dark rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 z-50"
+          aria-label="Expand chat"
+        >
+          <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+          </svg>
           <span className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full animate-pulse"></span>
         </button>
       )}
 
       {/* Chat Window Popup - Half Screen */}
       {isOpen && (
-        <div className="fixed top-4 right-4 bottom-4 w-[50vw] max-w-[800px] min-w-[600px] bg-neutral-900 rounded-2xl shadow-2xl flex overflow-hidden z-50 border border-teal/30">
+        <div className={`fixed top-4 right-4 bottom-4 w-[50vw] max-w-[800px] min-w-[600px] bg-neutral-900 rounded-2xl shadow-2xl flex overflow-hidden z-50 border border-teal/30 transition-opacity duration-300 ${isMinimized ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
           {/* Sidebar */}
           <aside className="w-80 bg-neutral-950 border-r border-neutral-800 p-6 overflow-y-auto">
             {/* Header */}
@@ -128,12 +154,20 @@ export default function ChatbotWidget() {
                   <button
                     key={index}
                     onClick={() => handlePromptClick(prompt)}
-                    className="w-full text-left px-3 py-2 bg-neutral-900 hover:bg-neutral-800 rounded-lg text-xs text-neutral-300 transition-colors border border-transparent hover:border-teal/30 cursor-pointer"
+                    className="w-full text-left px-3 py-2 bg-neutral-900 hover:bg-neutral-800 rounded-lg text-xs text-neutral-300 transition-colors border border-transparent hover:border-teal/30 cursor-pointer relative"
                   >
                     {prompt}
+                    {copiedPrompt === prompt && (
+                      <span className="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] text-teal font-semibold">
+                        Copied!
+                      </span>
+                    )}
                   </button>
                 ))}
               </div>
+              <p className="text-[10px] text-neutral-500 mt-2">
+                Click to copy, then paste in chat
+              </p>
             </div>
 
             {/* System Capabilities */}
@@ -171,16 +205,27 @@ export default function ChatbotWidget() {
 
           {/* Chat Area */}
           <main className="flex-1 flex flex-col bg-neutral-900 relative">
-            {/* Header with Close Button */}
+            {/* Header with Close and Minimize Buttons */}
             <div className="flex items-center justify-between px-6 py-4 border-b border-neutral-800">
               <h3 className="text-white font-semibold">Chat with AI Assistant</h3>
-              <button
-                onClick={() => setIsOpen(false)}
-                className="w-8 h-8 rounded-full hover:bg-neutral-800 flex items-center justify-center transition-colors"
-                aria-label="Close chat"
-              >
-                <X className="w-5 h-5 text-neutral-400" />
-              </button>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => setIsMinimized(true)}
+                  className="w-8 h-8 rounded-full hover:bg-neutral-800 flex items-center justify-center transition-colors"
+                  aria-label="Minimize chat"
+                >
+                  <svg className="w-5 h-5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
+                  </svg>
+                </button>
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="w-8 h-8 rounded-full hover:bg-neutral-800 flex items-center justify-center transition-colors"
+                  aria-label="Close chat"
+                >
+                  <X className="w-5 h-5 text-neutral-400" />
+                </button>
+              </div>
             </div>
 
             {/* Chatbot Container */}
@@ -194,7 +239,7 @@ export default function ChatbotWidget() {
                 <div className="absolute inset-0 flex items-center justify-center bg-neutral-900">
                   <div className="text-center">
                     <div className="w-12 h-12 mx-auto mb-4 rounded-full border-4 border-teal border-t-transparent animate-spin"></div>
-                    <p className="text-neutral-400 text-sm">Loading AI Assistant...</p>
+                    <p className="text-neutral-400 text-sm">Loading The Orchestrator...</p>
                   </div>
                 </div>
               )}

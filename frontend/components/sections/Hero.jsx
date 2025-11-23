@@ -50,19 +50,20 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden" data-testid="hero-section">
       {/* Background with grid pattern */}
       <div className="absolute inset-0 bg-neutral-950">
-        <div className="absolute inset-0 grid-pattern opacity-30"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-neutral-950/50 to-neutral-950"></div>
+        <div className="absolute inset-0 grid-pattern opacity-20"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-teal/5 via-neutral-950/80 to-neutral-950"></div>
       </div>
 
-      {/* Hero Background Image */}
-      <div className="absolute inset-0 opacity-20">
+      {/* Hero Background Image with teal tint */}
+      <div className="absolute inset-0 opacity-15">
         <Image
           src="https://images.unsplash.com/photo-1677442136019-21780ecad995"
           alt="AI Technology Background"
           fill
-          className="object-cover"
+          className="object-cover mix-blend-luminosity"
           priority
         />
+        <div className="absolute inset-0 bg-teal/10"></div>
       </div>
 
       {/* Animated vehicle grid overlay */}
@@ -71,18 +72,18 @@ export default function Hero() {
           <motion.div
             key={i}
             className="absolute w-2 h-2 bg-teal rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
+            initial={{
+              left: `${(i * 17) % 100}%`,
+              top: `${(i * 23) % 100}%`,
             }}
             animate={{
               opacity: [0.2, 0.8, 0.2],
               scale: [1, 1.5, 1],
             }}
             transition={{
-              duration: 3 + Math.random() * 2,
+              duration: 3 + (i % 3),
               repeat: Infinity,
-              delay: Math.random() * 2,
+              delay: i * 0.2,
             }}
           />
         ))}

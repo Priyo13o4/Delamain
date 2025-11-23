@@ -68,6 +68,7 @@ __turbopack_context__.s([
     "default",
     ()=>DemoPage
 ]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
@@ -93,13 +94,13 @@ function DemoPage() {
             // Initialize IBM WatsonX Orchestrate Chatbot
             if ("TURBOPACK compile-time truthy", 1) {
                 window.wxOConfiguration = {
-                    orchestrationID: "2e3430279d8a49fa861788b3fa8040be_3e5e0db3-a1c0-47cd-b6b1-906420dcd08a",
-                    hostURL: "https://us-south.watson-orchestrate.cloud.ibm.com",
+                    orchestrationID: ("TURBOPACK compile-time value", "2e3430279d8a49fa861788b3fa8040be_3e5e0db3-a1c0-47cd-b6b1-906420dcd08a"),
+                    hostURL: ("TURBOPACK compile-time value", "https://us-south.watson-orchestrate.cloud.ibm.com"),
                     rootElementID: "watsonx-chatbot-root",
-                    deploymentPlatform: "ibmcloud",
-                    crn: "crn:v1:bluemix:public:watsonx-orchestrate:us-south:a/2e3430279d8a49fa861788b3fa8040be:3e5e0db3-a1c0-47cd-b6b1-906420dcd08a::",
+                    deploymentPlatform: ("TURBOPACK compile-time value", "ibmcloud"),
+                    crn: ("TURBOPACK compile-time value", "crn:v1:bluemix:public:watsonx-orchestrate:us-south:a/2e3430279d8a49fa861788b3fa8040be:3e5e0db3-a1c0-47cd-b6b1-906420dcd08a::"),
                     chatOptions: {
-                        agentId: "94c9bd41-7cf2-4849-86b0-0e94c2a41911"
+                        agentId: ("TURBOPACK compile-time value", "94c9bd41-7cf2-4849-86b0-0e94c2a41911")
                     }
                 };
                 setTimeout({

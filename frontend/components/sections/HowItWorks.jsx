@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { ArrowRight, Cpu, GitBranch, Radio } from 'lucide-react'
+import { Cpu, GitBranch, Radio, Brain, Wrench } from 'lucide-react'
 
 export default function HowItWorks() {
   const [ref, inView] = useInView({
@@ -11,117 +11,157 @@ export default function HowItWorks() {
   })
 
   return (
-    <section className="relative py-20 bg-neutral-900" data-testid="how-it-works-section">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-neutral-900 border-y border-neutral-800" data-testid="how-it-works-section">
+      <div className="container mx-auto px-6 text-center">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold font-orbitron mb-4 text-white" data-testid="how-it-works-title">
-            The Architecture Behind the <span className="text-teal">Intelligence</span>
-          </h2>
-          <p className="text-xl text-neutral-400">
-            Built for Scale, Designed for Reliability
-          </p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-2 font-orbitron text-white">The Architecture Behind the <span className="text-teal">Intelligence</span></h2>
+          <p className="text-neutral-400">Built for Scale, Designed for Reliability</p>
         </motion.div>
 
-        {/* System Diagram */}
-        <motion.div
+        {/* SVG Diagram Container */}
+        <motion.div 
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 1, delay: 0.3 }}
-          className="relative mb-16"
+          className="relative max-w-5xl mx-auto bg-neutral-950 p-4 sm:p-12 rounded-2xl border border-neutral-800 shadow-2xl overflow-hidden"
         >
-          <div className="bg-neutral-950 border border-teal/30 rounded-xl p-8 md:p-12">
-            {/* Flow Diagram */}
-            <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-              {/* Vehicle Fleet */}
-              <div className="flex-1 text-center" data-testid="diagram-vehicle-fleet">
-                <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-teal/10 border-2 border-teal flex items-center justify-center">
-                  <Radio className="w-10 h-10 text-teal animate-pulse" />
-                </div>
-                <h3 className="text-lg font-bold font-rajdhani text-white mb-2">Vehicle Fleet</h3>
-                <p className="text-sm text-gray-400">Real-time telemetry</p>
-              </div>
-
-              <ArrowRight className="text-teal w-8 h-8 hidden md:block" />
-              <div className="md:hidden">
-                <div className="w-px h-8 bg-teal"></div>
-              </div>
-
-              {/* n8n Orchestration */}
-              <div className="flex-1 text-center" data-testid="diagram-orchestration">
-                <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-teal-light/10 border-2 border-teal-light flex items-center justify-center">
-                  <GitBranch className="w-10 h-10 text-teal-light" />
-                </div>
-                <h3 className="text-lg font-bold font-rajdhani text-white mb-2">n8n Orchestration</h3>
-                <p className="text-sm text-gray-400">Data routing layer</p>
-              </div>
-
-              <ArrowRight className="text-teal w-8 h-8 hidden md:block" />
-              <div className="md:hidden">
-                <div className="w-px h-8 bg-teal"></div>
-              </div>
-
-              {/* The Conductor */}
-              <div className="flex-1 text-center" data-testid="diagram-conductor">
-                <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-teal/20 border-2 border-teal flex items-center justify-center glow">
-                  <Cpu className="w-10 h-10 text-teal" />
-                </div>
-                <h3 className="text-lg font-bold font-rajdhani text-white mb-2">The Conductor</h3>
-                <p className="text-sm text-gray-400">Master AI Agent</p>
-              </div>
-
-              <ArrowRight className="text-teal w-8 h-8 hidden md:block" />
-              <div className="md:hidden">
-                <div className="w-px h-8 bg-teal"></div>
-              </div>
-
-              {/* AI Agents */}
-              <div className="flex-1 text-center" data-testid="diagram-agents">
-                <div className="space-y-2 mb-4">
-                  <div className="w-16 h-16 mx-auto rounded-lg bg-neutral-900 border border-teal-light flex items-center justify-center">
-                    <Brain className="w-8 h-8 text-teal-light" />
-                  </div>
-                  <div className="w-16 h-16 mx-auto rounded-lg bg-neutral-900 border border-teal-light flex items-center justify-center">
-                    <Wrench className="w-8 h-8 text-teal-light" />
-                  </div>
-                </div>
-                <h3 className="text-lg font-bold font-rajdhani text-white mb-2">Specialist Agents</h3>
-                <p className="text-sm text-gray-400">Diagnostician & Service Manager</p>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Stats Banner */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center"
-        >
-          <div className="bg-neutral-950 border border-teal/20 rounded-lg p-6" data-testid="stat-agents">
-            <p className="text-4xl font-bold font-rajdhani text-teal mb-2">3</p>
-            <p className="text-neutral-400">Specialized AI Agents</p>
-          </div>
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-teal to-transparent opacity-50"></div>
           
-          <div className="bg-neutral-950 border border-teal/20 rounded-lg p-6" data-testid="stat-endpoints">
-            <p className="text-4xl font-bold font-rajdhani text-teal mb-2">6</p>
-            <p className="text-neutral-400">Data Endpoints</p>
-          </div>
-          
-          <div className="bg-neutral-950 border border-teal/20 rounded-lg p-6" data-testid="stat-response">
-            <p className="text-4xl font-bold font-rajdhani text-teal mb-2">&lt;5s</p>
-            <p className="text-neutral-400">Response Time</p>
+          <svg viewBox="0 0 600 450" className="w-full h-auto">
+            <defs>
+              <linearGradient id="lineGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#262626" stopOpacity="0.2"/>
+                <stop offset="50%" stopColor="#14b8a6" />
+                <stop offset="100%" stopColor="#262626" stopOpacity="0.2"/>
+              </linearGradient>
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+                <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+            
+            {/* Connections */}
+            <g stroke="url(#lineGrad)" strokeWidth="2" fill="none">
+              {/* Fleet to n8n */}
+              <path d="M300 370 L 300 330" />
+              
+              {/* n8n to Agents */}
+              <path d="M300 270 L 140 210" />
+              <path d="M300 270 L 460 210" />
+              
+              {/* Agents to Conductor */}
+              <path d="M140 150 L 255 90" />
+              <path d="M460 150 L 345 90" />
+            </g>
+
+            {/* Conductor Node (Top Center) */}
+            <g>
+              <circle cx="300" cy="60" r="55" fill="#0a0a0a" stroke="#14b8a6" strokeWidth="3" filter="url(#glow)" />
+              <circle cx="300" cy="60" r="45" fill="none" stroke="#14b8a6" strokeWidth="1" strokeDasharray="5,5" opacity="0.5">
+                <animateTransform attributeName="transform" type="rotate" from="0 300 60" to="360 300 60" dur="10s" repeatCount="indefinite" />
+              </circle>
+              <foreignObject x="284" y="35" width="32" height="32">
+                <div className="flex items-center justify-center h-full w-full">
+                  <Cpu className="text-teal w-8 h-8" />
+                </div>
+              </foreignObject>
+              <text x="300" y="85" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold">CONDUCTOR</text>
+            </g>
+
+            {/* Agents Layer (Middle) */}
+            {/* Diagnostician Node (Left) */}
+            <g>
+              <rect x="80" y="150" width="120" height="60" rx="8" fill="#171717" stroke="#2dd4bf" strokeWidth="2" />
+              <foreignObject x="128" y="160" width="24" height="24">
+                <div className="flex items-center justify-center h-full w-full">
+                  <Brain className="text-teal-light w-6 h-6" />
+                </div>
+              </foreignObject>
+              <text x="140" y="200" textAnchor="middle" fill="white" fontSize="10">Diagnostician</text>
+            </g>
+
+            {/* Service Manager Node (Right) */}
+            <g>
+              <rect x="400" y="150" width="120" height="60" rx="8" fill="#171717" stroke="#2dd4bf" strokeWidth="2" />
+              <foreignObject x="448" y="160" width="24" height="24">
+                <div className="flex items-center justify-center h-full w-full">
+                  <Wrench className="text-teal-light w-6 h-6" />
+                </div>
+              </foreignObject>
+              <text x="460" y="200" textAnchor="middle" fill="white" fontSize="10">Service Manager</text>
+            </g>
+
+            {/* n8n Node (Below Agents) */}
+            <g>
+              <rect x="250" y="270" width="100" height="60" rx="8" fill="#171717" stroke="#525252" strokeWidth="1" />
+              <foreignObject x="288" y="280" width="24" height="24">
+                <div className="flex items-center justify-center h-full w-full">
+                  <GitBranch className="text-neutral-400 w-6 h-6" />
+                </div>
+              </foreignObject>
+              <text x="300" y="320" textAnchor="middle" fill="white" fontSize="10">n8n Orch</text>
+            </g>
+
+            {/* Fleet Node (Bottom) */}
+            <g className="cursor-pointer">
+              <rect x="260" y="370" width="80" height="60" rx="8" fill="#171717" stroke="#14b8a6" strokeWidth="2" filter="url(#glow)" />
+              <foreignObject x="288" y="380" width="24" height="24">
+                <div className="flex items-center justify-center h-full w-full">
+                  <Radio className="text-teal w-6 h-6" />
+                </div>
+              </foreignObject>
+              <text x="300" y="420" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold">Fleet</text>
+            </g>
+
+            {/* Animated Data Packets */}
+            {/* Fleet to n8n */}
+            <circle r="4" fill="#14b8a6">
+              <animateMotion dur="2s" repeatCount="indefinite" path="M300 370 L 300 330" />
+            </circle>
+            
+            {/* n8n to Agents */}
+            <circle r="4" fill="#14b8a6">
+              <animateMotion dur="2s" repeatCount="indefinite" begin="0.5s" path="M300 270 L 140 210" />
+            </circle>
+            <circle r="4" fill="#14b8a6">
+              <animateMotion dur="2s" repeatCount="indefinite" begin="0.5s" path="M300 270 L 460 210" />
+            </circle>
+            
+            {/* Agents to Conductor */}
+             <circle r="4" fill="#2dd4bf">
+              <animateMotion dur="1.5s" repeatCount="indefinite" begin="1s" path="M140 150 L 255 90" />
+            </circle>
+             <circle r="4" fill="#2dd4bf">
+              <animateMotion dur="1.5s" repeatCount="indefinite" begin="1.2s" path="M460 150 L 345 90" />
+            </circle>
+          </svg>
+
+          {/* Stats Overlay */}
+          <div className="grid grid-cols-3 gap-4 mt-8 pt-8 border-t border-neutral-800">
+             <div>
+               <div className="text-3xl font-bold text-white font-orbitron">3</div>
+               <div className="text-xs text-neutral-400 uppercase tracking-wide">Specialized Agents</div>
+             </div>
+             <div>
+               <div className="text-3xl font-bold text-white font-orbitron">6</div>
+               <div className="text-xs text-neutral-400 uppercase tracking-wide">Data Endpoints</div>
+             </div>
+             <div>
+               <div className="text-3xl font-bold text-white font-orbitron">&lt;5s</div>
+               <div className="text-xs text-neutral-400 uppercase tracking-wide">Response Time</div>
+             </div>
           </div>
         </motion.div>
       </div>
     </section>
   )
 }
-
-import { Brain, Wrench } from 'lucide-react'
