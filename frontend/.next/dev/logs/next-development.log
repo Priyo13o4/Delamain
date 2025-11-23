@@ -299,3 +299,6 @@ Import traces:
 [00:04:11.089] Server  LOG      ✓ Compiled in 20ms
 [00:04:28.886] Browser WARN    react-i18next:: You will need to pass in an i18next instance by using initReactI18next
 [00:04:28.886] Browser WARN    WARNING: Multiple instances of Three.js being imported.
+[00:13:40.965] Server  LOG        Reload env: .env.local
+[00:13:41.136] Server  LOG      ✓ Compiled in 136ms
+[00:14:03.866] Server  LOG      ✓ Compiled in 21ms

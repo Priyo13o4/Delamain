@@ -12,13 +12,13 @@ export default function ChatbotWidget() {
     // Initialize IBM WatsonX Orchestrate Chatbot on component mount
     if (typeof window !== 'undefined' && !window.wxOConfigurationSet) {
       window.wxOConfiguration = {
-        orchestrationID: "2e3430279d8a49fa861788b3fa8040be_3e5e0db3-a1c0-47cd-b6b1-906420dcd08a",
-        hostURL: "https://us-south.watson-orchestrate.cloud.ibm.com",
-        deploymentPlatform: "ibmcloud",
-        crn: "crn:v1:bluemix:public:watsonx-orchestrate:us-south:a/2e3430279d8a49fa861788b3fa8040be:3e5e0db3-a1c0-47cd-b6b1-906420dcd08a::",
+        orchestrationID: process.env.NEXT_PUBLIC_WXO_ORCHESTRATION_ID,
+        hostURL: process.env.NEXT_PUBLIC_WXO_HOST_URL,
+        deploymentPlatform: process.env.NEXT_PUBLIC_WXO_DEPLOYMENT_PLATFORM,
+        crn: process.env.NEXT_PUBLIC_WXO_CRN,
         chatOptions: {
-          agentId: "94c9bd41-7cf2-4849-86b0-0e94c2a41911",
-          agentEnvironmentId: "1cdfa86b-eaa1-40ef-8669-e03ec7527857",
+          agentId: process.env.NEXT_PUBLIC_WXO_AGENT_ID,
+          agentEnvironmentId: process.env.NEXT_PUBLIC_WXO_AGENT_ENVIRONMENT_ID,
         },
         layout: {
           form: 'custom',
