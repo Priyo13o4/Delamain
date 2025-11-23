@@ -977,10 +977,6 @@ body {
   width: 100%;
 }
 
-.w-px {
-  width: 1px;
-}
-
 .min-w-\[600px\] {
   min-width: 600px;
 }
@@ -1220,17 +1216,8 @@ body {
   border-color: rgb(20 184 166 / var(--tw-border-opacity, 1));
 }
 
-.border-teal-light {
-  --tw-border-opacity: 1;
-  border-color: rgb(45 212 191 / var(--tw-border-opacity, 1));
-}
-
 .border-teal-light\/50 {
   border-color: #2dd4bf80;
-}
-
-.border-teal\/20 {
-  border-color: #14b8a633;
 }
 
 .border-teal\/30 {
@@ -1286,10 +1273,6 @@ body {
   background-color: rgb(20 184 166 / var(--tw-bg-opacity, 1));
 }
 
-.bg-teal-light\/10 {
-  background-color: #2dd4bf1a;
-}
-
 .bg-teal-light\/20 {
   background-color: #2dd4bf33;
 }
@@ -1300,11 +1283,6 @@ body {
 
 .bg-teal\/20 {
   background-color: #14b8a633;
-}
-
-.bg-\[\#0A1628\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(10 22 40 / var(--tw-bg-opacity, 1));
 }
 
 .bg-gradient-to-b {
@@ -1418,6 +1396,10 @@ body {
   padding: .75rem;
 }
 
+.p-4 {
+  padding: 1rem;
+}
+
 .p-6 {
   padding: 1.5rem;
 }
@@ -1426,18 +1408,9 @@ body {
   padding: 2rem;
 }
 
-.p-4 {
-  padding: 1rem;
-}
-
 .px-12 {
   padding-left: 3rem;
   padding-right: 3rem;
-}
-
-.px-2 {
-  padding-left: .5rem;
-  padding-right: .5rem;
 }
 
 .px-3 {
@@ -1670,21 +1643,6 @@ body {
 .text-yellow-500 {
   --tw-text-opacity: 1;
   color: rgb(234 179 8 / var(--tw-text-opacity, 1));
-}
-
-.text-cyan-400 {
-  --tw-text-opacity: 1;
-  color: rgb(34 211 238 / var(--tw-text-opacity, 1));
-}
-
-.text-sky-500 {
-  --tw-text-opacity: 1;
-  color: rgb(14 165 233 / var(--tw-text-opacity, 1));
-}
-
-.text-slate-400 {
-  --tw-text-opacity: 1;
-  color: rgb(148 163 184 / var(--tw-text-opacity, 1));
 }
 
 .antialiased {
@@ -1952,14 +1910,6 @@ html {
 }
 
 @media (min-width: 768px) {
-  .md\:block {
-    display: block;
-  }
-
-  .md\:hidden {
-    display: none;
-  }
-
   .md\:h-96 {
     height: 24rem;
   }
@@ -1972,17 +1922,14 @@ html {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .md\:flex-row {
-    flex-direction: row;
-  }
-
-  .md\:p-12 {
-    padding: 3rem;
-  }
-
   .md\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
+  }
+
+  .md\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 
   .md\:text-5xl {
@@ -2003,11 +1950,6 @@ html {
   .md\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
-  }
-
-  .md\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
   }
 }
 

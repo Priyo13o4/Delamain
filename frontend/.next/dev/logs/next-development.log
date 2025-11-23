@@ -1353,3 +1353,311 @@ https://react.dev/link/hydration-mismatch
 [00:25:40.282] Browser LOG     new element is getting created now with ID WACCRoot
 [00:50:22.370] Browser WARN    react-i18next:: You will need to pass in an i18next instance by using initReactI18next
 [00:50:22.370] Browser WARN    WARNING: Multiple instances of Three.js being imported.
+[00:58:11.750] Server  LOG      ✓ Compiled in 461ms
+[00:59:05.587] Server  LOG      ✓ Compiled in 379ms
+[00:59:05.930] Server  ERROR    ⨯ ./node_modules/next/dist/client/dev/hot-reloader/pages/hot-reloader-pages.js:61:27
+Module not found: Can't resolve '../../../../server/dev/hot-reloader-types'
+
+
+Import trace:
+  Browser:
+    ./node_modules/next/dist/client/dev/hot-reloader/pages/hot-reloader-pages.js
+    ./node_modules/next/dist/client/page-bootstrap.js
+    ./node_modules/next/dist/client/next-dev-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:59:05.930] Server  ERROR    ⨯ ./node_modules/next/dist/client/dev/hot-reloader/pages/websocket.js:28:27
+Module not found: Can't resolve '../../../../server/dev/hot-reloader-types'
+
+
+Import trace:
+  Browser:
+    ./node_modules/next/dist/client/dev/hot-reloader/pages/websocket.js
+    ./node_modules/next/dist/client/dev/hot-middleware-client.js
+    ./node_modules/next/dist/client/next-dev-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:59:05.931] Server  ERROR    ⨯ ./node_modules/next/dist/client/dev/hot-middleware-client.js:12:27
+Module not found: Can't resolve '../../server/dev/hot-reloader-types'
+
+
+Import trace:
+  Browser:
+    ./node_modules/next/dist/client/dev/hot-middleware-client.js
+    ./node_modules/next/dist/client/next-dev-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:59:05.931] Server  ERROR    ⨯ ./node_modules/next/dist/client/page-bootstrap.js:18:27
+Module not found: Can't resolve '../server/dev/hot-reloader-types'
+
+
+Import trace:
+  Browser:
+    ./node_modules/next/dist/client/page-bootstrap.js
+    ./node_modules/next/dist/client/next-dev-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:59:05.931] Server  ERROR    ⨯ ./node_modules/next/dist/client/index.js:650:32
+Module not found: Can't resolve '../server/dev/node-stack-frames'
+
+
+Import trace:
+  Browser:
+    ./node_modules/next/dist/client/index.js
+    ./node_modules/next/dist/client/next-dev-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:59:05.931] Server  ERROR    ⨯ ./node_modules/next/dist/client/dev/hot-reloader/pages/hot-reloader-pages.js:56:23
+Module not found: Can't resolve 'next/dist/compiled/next-devtools'
+Import map: aliased to module 'next' with subpath '/dist/compiled/next-devtools' inside of [project]/
+
+
+Import trace:
+  Browser:
+    ./node_modules/next/dist/client/dev/hot-reloader/pages/hot-reloader-pages.js
+    ./node_modules/next/dist/client/page-bootstrap.js
+    ./node_modules/next/dist/client/next-dev-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:59:05.931] Server  ERROR    ⨯ ./node_modules/next/dist/client/page-bootstrap.js:22:23
+Module not found: Can't resolve 'next/dist/compiled/next-devtools'
+Import map: aliased to module 'next' with subpath '/dist/compiled/next-devtools' inside of [project]/
+
+
+Import trace:
+  Browser:
+    ./node_modules/next/dist/client/page-bootstrap.js
+    ./node_modules/next/dist/client/next-dev-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:59:05.931] Server  ERROR    ⨯ ./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:26:23
+Module not found: Can't resolve 'next/dist/compiled/next-devtools'
+Import map: aliased to module 'next' with subpath '/dist/compiled/next-devtools' inside of [project]/
+
+
+Import trace:
+  Browser:
+    ./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js
+    ./node_modules/next/dist/client/index.js
+    ./node_modules/next/dist/client/next-dev-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:59:05.931] Server  ERROR    ⨯ ./node_modules/next/dist/shared/lib/router/utils/route-match-utils.js:34:23
+Module not found: Can't resolve 'next/dist/compiled/path-to-regexp'
+Import map: aliased to module 'next' with subpath '/dist/compiled/path-to-regexp' inside of [project]/
+
+
+Import trace:
+  Browser:
+    ./node_modules/next/dist/shared/lib/router/utils/route-match-utils.js
+    ./node_modules/next/dist/shared/lib/router/utils/route-matcher.js
+    ./node_modules/next/dist/shared/lib/router/router.js
+    ./node_modules/next/dist/client/router.js
+    ./node_modules/next/dist/client/index.js
+    ./node_modules/next/dist/client/next-dev-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:59:05.931] Server  ERROR    ⨯ ./node_modules/next/dist/next-devtools/userspace/app/forward-logs-utils.js:27:30
+Module not found: Can't resolve 'next/dist/compiled/safe-stable-stringify'
+Import map: aliased to module 'next' with subpath '/dist/compiled/safe-stable-stringify' inside of [project]/
+
+
+Import trace:
+  Browser:
+    ./node_modules/next/dist/next-devtools/userspace/app/forward-logs-utils.js
+    ./node_modules/next/dist/next-devtools/userspace/app/forward-logs.js
+    ./node_modules/next/dist/client/dev/hot-reloader/pages/websocket.js
+    ./node_modules/next/dist/client/dev/hot-middleware-client.js
+    ./node_modules/next/dist/client/next-dev-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:59:05.931] Server  ERROR    ⨯ ./node_modules/next/dist/client/dev/hot-reloader/pages/hot-reloader-pages.js:58:61
+Module not found: Can't resolve 'next/dist/compiled/strip-ansi'
+Import map: aliased to module 'next' with subpath '/dist/compiled/strip-ansi' inside of [project]/
+
+
+Import trace:
+  Browser:
+    ./node_modules/next/dist/client/dev/hot-reloader/pages/hot-reloader-pages.js
+    ./node_modules/next/dist/client/page-bootstrap.js
+    ./node_modules/next/dist/client/next-dev-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:59:05.932] Server  ERROR    ⨯ ./node_modules/next/dist/shared/lib/format-webpack-messages.js:34:61
+Module not found: Can't resolve 'next/dist/compiled/strip-ansi'
+Import map: aliased to module 'next' with subpath '/dist/compiled/strip-ansi' inside of [project]/
+
+
+Import trace:
+  Browser:
+    ./node_modules/next/dist/shared/lib/format-webpack-messages.js
+    ./node_modules/next/dist/client/dev/hot-reloader/pages/hot-reloader-pages.js
+    ./node_modules/next/dist/client/page-bootstrap.js
+    ./node_modules/next/dist/client/next-dev-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:59:05.950] Server  ERROR    ⨯ ./node_modules/next/dist/pages/_document.js:42:23
+Module not found: Can't resolve '../server/get-page-files'
+
+
+Import trace:
+  SSR:
+    ./node_modules/next/dist/pages/_document.js
+    ./node_modules/next/document.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:59:05.950] Server  ERROR    ⨯ ./node_modules/next/dist/pages/_document.js:43:21
+Module not found: Can't resolve '../server/htmlescape'
+
+
+Import trace:
+  SSR:
+    ./node_modules/next/dist/pages/_document.js
+    ./node_modules/next/document.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:59:05.950] Server  ERROR    ⨯ ./node_modules/next/dist/pages/_document.js:47:17
+Module not found: Can't resolve '../server/lib/trace/tracer'
+
+
+Import trace:
+  SSR:
+    ./node_modules/next/dist/pages/_document.js
+    ./node_modules/next/document.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:59:05.950] Server  ERROR    ⨯ ./node_modules/next/dist/pages/_document.js:48:16
+Module not found: Can't resolve '../server/lib/trace/utils'
+
+
+Import trace:
+  SSR:
+    ./node_modules/next/dist/pages/_document.js
+    ./node_modules/next/document.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:59:05.980] Server  LOG      ✓ Compiled in 305ms
+[00:59:06.091] Server  ERROR    ⨯ TurbopackInternalError: Failed to write page endpoint /_error
+
+Caused by:
+- content is not available as task execution failed
+- content is not available as task execution failed
+- Expected file content at [project]/node_modules/next/dist/lib/default-transpiled-packages.json
+
+Debug info:
+- Execution of get_written_endpoint_with_issues_operation failed
+- Execution of endpoint_write_to_disk failed
+- Execution of <PageEndpoint as Endpoint>::output failed
+- Failed to write page endpoint /_error
+- Execution of PageEndpoint::output failed
+- Execution of PageEndpoint::client_chunk_group failed
+- Execution of PageEndpoint::client_evaluatable_assets failed
+- content is not available as task execution failed
+- Execution of PageEndpoint::client_module failed
+- content is not available as task execution failed
+- Execution of *create_page_loader_entry_module failed
+- Execution of PagesProject::client_module_context failed
+- Execution of *ModuleAssetContext::new failed
+- Execution of get_client_module_options_context failed
+- Execution of *get_jsx_transform_options failed
+- Execution of get_client_resolve_options_context failed
+- Execution of get_transpiled_packages failed
+- Expected file content at [project]/node_modules/next/dist/lib/default-transpiled-packages.json
+[00:59:06.097] Server  ERROR   TurbopackInternalError: Failed to write app endpoint /page
+
+Caused by:
+- Expected file content for file
+
+Debug info:
+- Execution of get_written_endpoint_with_issues_operation failed
+- Execution of endpoint_write_to_disk failed
+- Execution of <AppEndpoint as Endpoint>::output failed
+- Failed to write app endpoint /page
+- Execution of AppEndpoint::output failed
+- Execution of get_app_page_entry failed
+- Execution of file_content_rope failed
+- Expected file content for file
+[00:59:06.099] Server  ERROR    ⨯ TurbopackInternalError: Failed to write page endpoint /_app
+
+Caused by:
+- content is not available as task execution failed
+- content is not available as task execution failed
+- Expected file content at [project]/node_modules/next/dist/lib/default-transpiled-packages.json
+
+Debug info:
+- Execution of get_written_endpoint_with_issues_operation failed
+- Execution of endpoint_write_to_disk failed
+- Execution of <PageEndpoint as Endpoint>::output failed
+- Failed to write page endpoint /_app
+- Execution of PageEndpoint::output failed
+- Execution of PageEndpoint::client_chunk_group failed
+- Execution of PageEndpoint::client_evaluatable_assets failed
+- content is not available as task execution failed
+- Execution of PageEndpoint::client_module failed
+- content is not available as task execution failed
+- Execution of *create_page_loader_entry_module failed
+- Execution of PagesProject::client_module_context failed
+- Execution of *ModuleAssetContext::new failed
+- Execution of get_client_module_options_context failed
+- Execution of *get_jsx_transform_options failed
+- Execution of get_client_resolve_options_context failed
+- Execution of get_transpiled_packages failed
+- Expected file content at [project]/node_modules/next/dist/lib/default-transpiled-packages.json
+[00:59:06.100] Server  ERROR   TurbopackInternalError: Failed to write page endpoint /_app
+
+Caused by:
+- content is not available as task execution failed
+- content is not available as task execution failed
+- Expected file content at [project]/node_modules/next/dist/lib/default-transpiled-packages.json
+
+Debug info:
+- Execution of get_written_endpoint_with_issues_operation failed
+- Execution of endpoint_write_to_disk failed
+- Execution of <PageEndpoint as Endpoint>::output failed
+- Failed to write page endpoint /_app
+- Execution of PageEndpoint::output failed
+- Execution of PageEndpoint::client_chunk_group failed
+- Execution of PageEndpoint::client_evaluatable_assets failed
+- content is not available as task execution failed
+- Execution of PageEndpoint::client_module failed
+- content is not available as task execution failed
+- Execution of *create_page_loader_entry_module failed
+- Execution of PagesProject::client_module_context failed
+- Execution of *ModuleAssetContext::new failed
+- Execution of get_client_module_options_context failed
+- Execution of *get_jsx_transform_options failed
+- Execution of get_client_resolve_options_context failed
+- Execution of get_transpiled_packages failed
+- Expected file content at [project]/node_modules/next/dist/lib/default-transpiled-packages.json
