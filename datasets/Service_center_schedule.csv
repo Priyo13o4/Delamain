@@ -1,0 +1,631 @@
+center_id,center_name,date,time_slot,is_available,booked_by_vin,service_type,estimated_duration_hours,technician_assigned
+SC001,Brigade Auto - Hebbal,2025-11-23,09:00,TRUE,,,2.5,
+SC001,Brigade Auto - Hebbal,2025-11-23,10:00,TRUE,,,1,
+SC001,Brigade Auto - Hebbal,2025-11-23,11:00,TRUE,,,1.5,
+SC001,Brigade Auto - Hebbal,2025-11-23,12:00,TRUE,,,1,
+SC001,Brigade Auto - Hebbal,2025-11-23,13:00,TRUE,,,3,
+SC001,Brigade Auto - Hebbal,2025-11-23,14:00,TRUE,,,2,
+SC001,Brigade Auto - Hebbal,2025-11-23,15:00,TRUE,,,2.5,
+SC001,Brigade Auto - Hebbal,2025-11-23,16:00,FALSE,VINGEN10008,Engine Diagnostics,1.5,Tech-502
+SC001,Brigade Auto - Hebbal,2025-11-23,17:00,FALSE,VINGEN10007,Tire Rotation,3,Tech-535
+SC001,Brigade Auto - Hebbal,2025-11-24,09:00,FALSE,VINGEN10004,Coolant System Check,2.5,Tech-989
+SC001,Brigade Auto - Hebbal,2025-11-24,10:00,TRUE,,,2.5,
+SC001,Brigade Auto - Hebbal,2025-11-24,11:00,TRUE,,,1,
+SC001,Brigade Auto - Hebbal,2025-11-24,12:00,FALSE,VINGEN10008,Battery Check,2,Tech-494
+SC001,Brigade Auto - Hebbal,2025-11-24,13:00,TRUE,,,1.5,
+SC001,Brigade Auto - Hebbal,2025-11-24,14:00,FALSE,VINGEN10006,Coolant System Check,2,Tech-446
+SC001,Brigade Auto - Hebbal,2025-11-24,15:00,TRUE,,,1.5,
+SC001,Brigade Auto - Hebbal,2025-11-24,16:00,TRUE,,,2,
+SC001,Brigade Auto - Hebbal,2025-11-24,17:00,TRUE,,,1.5,
+SC001,Brigade Auto - Hebbal,2025-11-25,09:00,FALSE,VINGEN10004,Engine Diagnostics,1,Tech-396
+SC001,Brigade Auto - Hebbal,2025-11-25,10:00,TRUE,,,3,
+SC001,Brigade Auto - Hebbal,2025-11-25,11:00,TRUE,,,2,
+SC001,Brigade Auto - Hebbal,2025-11-25,12:00,TRUE,,,1.5,
+SC001,Brigade Auto - Hebbal,2025-11-25,13:00,TRUE,,,2.5,
+SC001,Brigade Auto - Hebbal,2025-11-25,14:00,TRUE,,,1.5,
+SC001,Brigade Auto - Hebbal,2025-11-25,15:00,TRUE,,,2,
+SC001,Brigade Auto - Hebbal,2025-11-25,16:00,TRUE,,,3,
+SC001,Brigade Auto - Hebbal,2025-11-25,17:00,TRUE,,,2,
+SC001,Brigade Auto - Hebbal,2025-11-26,09:00,TRUE,,,1.5,
+SC001,Brigade Auto - Hebbal,2025-11-26,10:00,FALSE,VINGEN10006,Tire Rotation,2.5,Tech-668
+SC001,Brigade Auto - Hebbal,2025-11-26,11:00,FALSE,VINGEN10006,Engine Diagnostics,1,Tech-343
+SC001,Brigade Auto - Hebbal,2025-11-26,12:00,FALSE,VINGEN10000,Battery Check,2.5,Tech-459
+SC001,Brigade Auto - Hebbal,2025-11-26,13:00,FALSE,VINGEN10005,Coolant System Check,3,Tech-244
+SC001,Brigade Auto - Hebbal,2025-11-26,14:00,FALSE,VINGEN10009,Battery Check,1.5,Tech-973
+SC001,Brigade Auto - Hebbal,2025-11-26,15:00,FALSE,VINGEN10004,Oil Change,1.5,Tech-890
+SC001,Brigade Auto - Hebbal,2025-11-26,16:00,TRUE,,,3,
+SC001,Brigade Auto - Hebbal,2025-11-26,17:00,FALSE,VINGEN10008,Engine Diagnostics,1.5,Tech-470
+SC001,Brigade Auto - Hebbal,2025-11-27,09:00,TRUE,,,1,
+SC001,Brigade Auto - Hebbal,2025-11-27,10:00,TRUE,,,2.5,
+SC001,Brigade Auto - Hebbal,2025-11-27,11:00,FALSE,VINGEN10002,Engine Diagnostics,2,Tech-166
+SC001,Brigade Auto - Hebbal,2025-11-27,12:00,TRUE,,,3,
+SC001,Brigade Auto - Hebbal,2025-11-27,13:00,FALSE,VINGEN10004,Coolant System Check,1,Tech-964
+SC001,Brigade Auto - Hebbal,2025-11-27,14:00,TRUE,,,1.5,
+SC001,Brigade Auto - Hebbal,2025-11-27,15:00,TRUE,,,1,
+SC001,Brigade Auto - Hebbal,2025-11-27,16:00,TRUE,,,2.5,
+SC001,Brigade Auto - Hebbal,2025-11-27,17:00,TRUE,,,2.5,
+SC001,Brigade Auto - Hebbal,2025-11-28,09:00,TRUE,,,3,
+SC001,Brigade Auto - Hebbal,2025-11-28,10:00,TRUE,,,3,
+SC001,Brigade Auto - Hebbal,2025-11-28,11:00,TRUE,,,3,
+SC001,Brigade Auto - Hebbal,2025-11-28,12:00,FALSE,VINGEN10003,Coolant System Check,1.5,Tech-770
+SC001,Brigade Auto - Hebbal,2025-11-28,13:00,FALSE,VINGEN10001,Coolant System Check,1.5,Tech-192
+SC001,Brigade Auto - Hebbal,2025-11-28,14:00,TRUE,,,2,
+SC001,Brigade Auto - Hebbal,2025-11-28,15:00,TRUE,,,3,
+SC001,Brigade Auto - Hebbal,2025-11-28,16:00,TRUE,,,2,
+SC001,Brigade Auto - Hebbal,2025-11-28,17:00,TRUE,,,3,
+SC001,Brigade Auto - Hebbal,2025-11-29,09:00,TRUE,,,3,
+SC001,Brigade Auto - Hebbal,2025-11-29,10:00,FALSE,VINGEN10001,Battery Check,1,Tech-767
+SC001,Brigade Auto - Hebbal,2025-11-29,11:00,TRUE,,,1,
+SC001,Brigade Auto - Hebbal,2025-11-29,12:00,TRUE,,,1.5,
+SC001,Brigade Auto - Hebbal,2025-11-29,13:00,TRUE,,,3,
+SC001,Brigade Auto - Hebbal,2025-11-29,14:00,FALSE,VINGEN10008,Battery Check,1,Tech-169
+SC001,Brigade Auto - Hebbal,2025-11-29,15:00,TRUE,,,3,
+SC001,Brigade Auto - Hebbal,2025-11-29,16:00,FALSE,VINGEN10002,Battery Check,2.5,Tech-633
+SC001,Brigade Auto - Hebbal,2025-11-29,17:00,TRUE,,,1,
+SC001,Brigade Auto - Hebbal,2025-11-30,09:00,TRUE,,,2,
+SC001,Brigade Auto - Hebbal,2025-11-30,10:00,FALSE,VINGEN10008,Tire Rotation,1.5,Tech-216
+SC001,Brigade Auto - Hebbal,2025-11-30,11:00,FALSE,VINGEN10009,Engine Diagnostics,2,Tech-362
+SC001,Brigade Auto - Hebbal,2025-11-30,12:00,FALSE,VINGEN10006,Battery Check,3,Tech-452
+SC001,Brigade Auto - Hebbal,2025-11-30,13:00,FALSE,VINGEN10003,Brake Inspection,3,Tech-264
+SC001,Brigade Auto - Hebbal,2025-11-30,14:00,TRUE,,,2,
+SC001,Brigade Auto - Hebbal,2025-11-30,15:00,TRUE,,,1.5,
+SC001,Brigade Auto - Hebbal,2025-11-30,16:00,FALSE,VINGEN10006,Oil Change,1.5,Tech-181
+SC001,Brigade Auto - Hebbal,2025-11-30,17:00,TRUE,,,1,
+SC001,Brigade Auto - Hebbal,2025-12-01,09:00,TRUE,,,1,
+SC001,Brigade Auto - Hebbal,2025-12-01,10:00,TRUE,,,1,
+SC001,Brigade Auto - Hebbal,2025-12-01,11:00,TRUE,,,1.5,
+SC001,Brigade Auto - Hebbal,2025-12-01,12:00,TRUE,,,1,
+SC001,Brigade Auto - Hebbal,2025-12-01,13:00,FALSE,VINGEN10007,Coolant System Check,2.5,Tech-619
+SC001,Brigade Auto - Hebbal,2025-12-01,14:00,TRUE,,,1,
+SC001,Brigade Auto - Hebbal,2025-12-01,15:00,TRUE,,,3,
+SC001,Brigade Auto - Hebbal,2025-12-01,16:00,TRUE,,,2.5,
+SC001,Brigade Auto - Hebbal,2025-12-01,17:00,TRUE,,,1,
+SC001,Brigade Auto - Hebbal,2025-12-02,09:00,TRUE,,,3,
+SC001,Brigade Auto - Hebbal,2025-12-02,10:00,TRUE,,,2.5,
+SC001,Brigade Auto - Hebbal,2025-12-02,11:00,FALSE,VINGEN10005,Engine Diagnostics,2,Tech-428
+SC001,Brigade Auto - Hebbal,2025-12-02,12:00,TRUE,,,3,
+SC001,Brigade Auto - Hebbal,2025-12-02,13:00,FALSE,VINGEN10005,Coolant System Check,1,Tech-428
+SC001,Brigade Auto - Hebbal,2025-12-02,14:00,TRUE,,,1.5,
+SC001,Brigade Auto - Hebbal,2025-12-02,15:00,FALSE,VINGEN10009,Tire Rotation,1.5,Tech-137
+SC001,Brigade Auto - Hebbal,2025-12-02,16:00,FALSE,VINGEN10000,Engine Diagnostics,2,Tech-213
+SC001,Brigade Auto - Hebbal,2025-12-02,17:00,TRUE,,,2,
+SC001,Brigade Auto - Hebbal,2025-12-03,09:00,TRUE,,,1.5,
+SC001,Brigade Auto - Hebbal,2025-12-03,10:00,TRUE,,,2,
+SC001,Brigade Auto - Hebbal,2025-12-03,11:00,FALSE,VINGEN10007,Coolant System Check,1,Tech-667
+SC001,Brigade Auto - Hebbal,2025-12-03,12:00,TRUE,,,1.5,
+SC001,Brigade Auto - Hebbal,2025-12-03,13:00,TRUE,,,2,
+SC001,Brigade Auto - Hebbal,2025-12-03,14:00,TRUE,,,1,
+SC001,Brigade Auto - Hebbal,2025-12-03,15:00,TRUE,,,1.5,
+SC001,Brigade Auto - Hebbal,2025-12-03,16:00,TRUE,,,3,
+SC001,Brigade Auto - Hebbal,2025-12-03,17:00,TRUE,,,1,
+SC001,Brigade Auto - Hebbal,2025-12-04,09:00,TRUE,,,3,
+SC001,Brigade Auto - Hebbal,2025-12-04,10:00,TRUE,,,2.5,
+SC001,Brigade Auto - Hebbal,2025-12-04,11:00,FALSE,VINGEN10002,Coolant System Check,1,Tech-107
+SC001,Brigade Auto - Hebbal,2025-12-04,12:00,FALSE,VINGEN10002,Oil Change,2,Tech-437
+SC001,Brigade Auto - Hebbal,2025-12-04,13:00,FALSE,VINGEN10001,Tire Rotation,2.5,Tech-791
+SC001,Brigade Auto - Hebbal,2025-12-04,14:00,TRUE,,,2,
+SC001,Brigade Auto - Hebbal,2025-12-04,15:00,FALSE,VINGEN10009,Coolant System Check,2,Tech-796
+SC001,Brigade Auto - Hebbal,2025-12-04,16:00,FALSE,VINGEN10009,Coolant System Check,2.5,Tech-245
+SC001,Brigade Auto - Hebbal,2025-12-04,17:00,FALSE,VINGEN10006,Battery Check,1,Tech-791
+SC001,Brigade Auto - Hebbal,2025-12-05,09:00,TRUE,,,2.5,
+SC001,Brigade Auto - Hebbal,2025-12-05,10:00,TRUE,,,2.5,
+SC001,Brigade Auto - Hebbal,2025-12-05,11:00,TRUE,,,1.5,
+SC001,Brigade Auto - Hebbal,2025-12-05,12:00,TRUE,,,2.5,
+SC001,Brigade Auto - Hebbal,2025-12-05,13:00,TRUE,,,1.5,
+SC001,Brigade Auto - Hebbal,2025-12-05,14:00,TRUE,,,2,
+SC001,Brigade Auto - Hebbal,2025-12-05,15:00,TRUE,,,1,
+SC001,Brigade Auto - Hebbal,2025-12-05,16:00,FALSE,VINGEN10004,Coolant System Check,2.5,Tech-926
+SC001,Brigade Auto - Hebbal,2025-12-05,17:00,TRUE,,,2.5,
+SC001,Brigade Auto - Hebbal,2025-12-06,09:00,TRUE,,,2,
+SC001,Brigade Auto - Hebbal,2025-12-06,10:00,TRUE,,,3,
+SC001,Brigade Auto - Hebbal,2025-12-06,11:00,TRUE,,,1,
+SC001,Brigade Auto - Hebbal,2025-12-06,12:00,FALSE,VINGEN10009,Coolant System Check,2.5,Tech-252
+SC001,Brigade Auto - Hebbal,2025-12-06,13:00,TRUE,,,1,
+SC001,Brigade Auto - Hebbal,2025-12-06,14:00,TRUE,,,1.5,
+SC001,Brigade Auto - Hebbal,2025-12-06,15:00,TRUE,,,1.5,
+SC001,Brigade Auto - Hebbal,2025-12-06,16:00,TRUE,,,2,
+SC001,Brigade Auto - Hebbal,2025-12-06,17:00,TRUE,,,2.5,
+SC002,SilkRoad Motors - Whitefield,2025-11-23,09:00,FALSE,VINGEN10004,Tire Rotation,2,Tech-960
+SC002,SilkRoad Motors - Whitefield,2025-11-23,10:00,FALSE,VINGEN10001,Brake Inspection,2,Tech-913
+SC002,SilkRoad Motors - Whitefield,2025-11-23,11:00,FALSE,VINGEN10005,Engine Diagnostics,1,Tech-717
+SC002,SilkRoad Motors - Whitefield,2025-11-23,12:00,TRUE,,,1,
+SC002,SilkRoad Motors - Whitefield,2025-11-23,13:00,TRUE,,,1.5,
+SC002,SilkRoad Motors - Whitefield,2025-11-23,14:00,FALSE,VINGEN10008,Engine Diagnostics,1.5,Tech-380
+SC002,SilkRoad Motors - Whitefield,2025-11-23,15:00,TRUE,,,1.5,
+SC002,SilkRoad Motors - Whitefield,2025-11-23,16:00,TRUE,,,3,
+SC002,SilkRoad Motors - Whitefield,2025-11-23,17:00,TRUE,,,2.5,
+SC002,SilkRoad Motors - Whitefield,2025-11-24,09:00,TRUE,,,2,
+SC002,SilkRoad Motors - Whitefield,2025-11-24,10:00,FALSE,VINGEN10009,Brake Inspection,2.5,Tech-104
+SC002,SilkRoad Motors - Whitefield,2025-11-24,11:00,FALSE,VINGEN10003,Oil Change,3,Tech-663
+SC002,SilkRoad Motors - Whitefield,2025-11-24,12:00,FALSE,VINGEN10002,Coolant System Check,3,Tech-972
+SC002,SilkRoad Motors - Whitefield,2025-11-24,13:00,TRUE,,,2.5,
+SC002,SilkRoad Motors - Whitefield,2025-11-24,14:00,FALSE,VINGEN10003,Brake Inspection,3,Tech-410
+SC002,SilkRoad Motors - Whitefield,2025-11-24,15:00,FALSE,VINGEN10005,Battery Check,1.5,Tech-740
+SC002,SilkRoad Motors - Whitefield,2025-11-24,16:00,TRUE,,,3,
+SC002,SilkRoad Motors - Whitefield,2025-11-24,17:00,FALSE,VINGEN10005,Coolant System Check,1.5,Tech-270
+SC002,SilkRoad Motors - Whitefield,2025-11-25,09:00,TRUE,,,1,
+SC002,SilkRoad Motors - Whitefield,2025-11-25,10:00,TRUE,,,2,
+SC002,SilkRoad Motors - Whitefield,2025-11-25,11:00,TRUE,,,1,
+SC002,SilkRoad Motors - Whitefield,2025-11-25,12:00,TRUE,,,1,
+SC002,SilkRoad Motors - Whitefield,2025-11-25,13:00,FALSE,VINGEN10001,Oil Change,3,Tech-455
+SC002,SilkRoad Motors - Whitefield,2025-11-25,14:00,TRUE,,,1.5,
+SC002,SilkRoad Motors - Whitefield,2025-11-25,15:00,FALSE,VINGEN10001,Brake Inspection,1.5,Tech-453
+SC002,SilkRoad Motors - Whitefield,2025-11-25,16:00,FALSE,VINGEN10007,Engine Diagnostics,3,Tech-789
+SC002,SilkRoad Motors - Whitefield,2025-11-25,17:00,FALSE,VINGEN10004,Tire Rotation,1,Tech-990
+SC002,SilkRoad Motors - Whitefield,2025-11-26,09:00,FALSE,VINGEN10005,Brake Inspection,2,Tech-404
+SC002,SilkRoad Motors - Whitefield,2025-11-26,10:00,TRUE,,,2,
+SC002,SilkRoad Motors - Whitefield,2025-11-26,11:00,TRUE,,,3,
+SC002,SilkRoad Motors - Whitefield,2025-11-26,12:00,TRUE,,,1,
+SC002,SilkRoad Motors - Whitefield,2025-11-26,13:00,FALSE,VINGEN10001,Coolant System Check,3,Tech-107
+SC002,SilkRoad Motors - Whitefield,2025-11-26,14:00,TRUE,,,2,
+SC002,SilkRoad Motors - Whitefield,2025-11-26,15:00,FALSE,VINGEN10004,Oil Change,2,Tech-556
+SC002,SilkRoad Motors - Whitefield,2025-11-26,16:00,FALSE,VINGEN10002,Oil Change,1,Tech-394
+SC002,SilkRoad Motors - Whitefield,2025-11-26,17:00,TRUE,,,1,
+SC002,SilkRoad Motors - Whitefield,2025-11-27,09:00,TRUE,,,2,
+SC002,SilkRoad Motors - Whitefield,2025-11-27,10:00,FALSE,VINGEN10004,Battery Check,2.5,Tech-279
+SC002,SilkRoad Motors - Whitefield,2025-11-27,11:00,TRUE,,,3,
+SC002,SilkRoad Motors - Whitefield,2025-11-27,12:00,TRUE,,,3,
+SC002,SilkRoad Motors - Whitefield,2025-11-27,13:00,TRUE,,,2,
+SC002,SilkRoad Motors - Whitefield,2025-11-27,14:00,TRUE,,,2,
+SC002,SilkRoad Motors - Whitefield,2025-11-27,15:00,FALSE,VINGEN10003,Oil Change,2.5,Tech-315
+SC002,SilkRoad Motors - Whitefield,2025-11-27,16:00,FALSE,VINGEN10000,Engine Diagnostics,2.5,Tech-132
+SC002,SilkRoad Motors - Whitefield,2025-11-27,17:00,FALSE,VINGEN10006,Coolant System Check,1,Tech-444
+SC002,SilkRoad Motors - Whitefield,2025-11-28,09:00,FALSE,VINGEN10000,Coolant System Check,2,Tech-846
+SC002,SilkRoad Motors - Whitefield,2025-11-28,10:00,FALSE,VINGEN10009,Engine Diagnostics,3,Tech-451
+SC002,SilkRoad Motors - Whitefield,2025-11-28,11:00,FALSE,VINGEN10000,Battery Check,1,Tech-155
+SC002,SilkRoad Motors - Whitefield,2025-11-28,12:00,FALSE,VINGEN10001,Brake Inspection,2,Tech-770
+SC002,SilkRoad Motors - Whitefield,2025-11-28,13:00,TRUE,,,2,
+SC002,SilkRoad Motors - Whitefield,2025-11-28,14:00,TRUE,,,3,
+SC002,SilkRoad Motors - Whitefield,2025-11-28,15:00,TRUE,,,1.5,
+SC002,SilkRoad Motors - Whitefield,2025-11-28,16:00,FALSE,VINGEN10000,Engine Diagnostics,1,Tech-460
+SC002,SilkRoad Motors - Whitefield,2025-11-28,17:00,FALSE,VINGEN10008,Oil Change,2.5,Tech-750
+SC002,SilkRoad Motors - Whitefield,2025-11-29,09:00,TRUE,,,2,
+SC002,SilkRoad Motors - Whitefield,2025-11-29,10:00,TRUE,,,2,
+SC002,SilkRoad Motors - Whitefield,2025-11-29,11:00,FALSE,VINGEN10007,Oil Change,1.5,Tech-169
+SC002,SilkRoad Motors - Whitefield,2025-11-29,12:00,FALSE,VINGEN10005,Tire Rotation,1.5,Tech-497
+SC002,SilkRoad Motors - Whitefield,2025-11-29,13:00,FALSE,VINGEN10008,Brake Inspection,1.5,Tech-909
+SC002,SilkRoad Motors - Whitefield,2025-11-29,14:00,TRUE,,,3,
+SC002,SilkRoad Motors - Whitefield,2025-11-29,15:00,TRUE,,,2.5,
+SC002,SilkRoad Motors - Whitefield,2025-11-29,16:00,TRUE,,,2,
+SC002,SilkRoad Motors - Whitefield,2025-11-29,17:00,TRUE,,,1,
+SC002,SilkRoad Motors - Whitefield,2025-11-30,09:00,TRUE,,,2.5,
+SC002,SilkRoad Motors - Whitefield,2025-11-30,10:00,TRUE,,,3,
+SC002,SilkRoad Motors - Whitefield,2025-11-30,11:00,TRUE,,,3,
+SC002,SilkRoad Motors - Whitefield,2025-11-30,12:00,TRUE,,,3,
+SC002,SilkRoad Motors - Whitefield,2025-11-30,13:00,TRUE,,,2,
+SC002,SilkRoad Motors - Whitefield,2025-11-30,14:00,TRUE,,,2.5,
+SC002,SilkRoad Motors - Whitefield,2025-11-30,15:00,TRUE,,,2,
+SC002,SilkRoad Motors - Whitefield,2025-11-30,16:00,FALSE,VINGEN10003,Battery Check,1.5,Tech-293
+SC002,SilkRoad Motors - Whitefield,2025-11-30,17:00,FALSE,VINGEN10005,Oil Change,3,Tech-966
+SC002,SilkRoad Motors - Whitefield,2025-12-01,09:00,FALSE,VINGEN10002,Engine Diagnostics,1.5,Tech-136
+SC002,SilkRoad Motors - Whitefield,2025-12-01,10:00,FALSE,VINGEN10000,Engine Diagnostics,2,Tech-925
+SC002,SilkRoad Motors - Whitefield,2025-12-01,11:00,TRUE,,,3,
+SC002,SilkRoad Motors - Whitefield,2025-12-01,12:00,TRUE,,,2.5,
+SC002,SilkRoad Motors - Whitefield,2025-12-01,13:00,FALSE,VINGEN10005,Brake Inspection,1.5,Tech-584
+SC002,SilkRoad Motors - Whitefield,2025-12-01,14:00,TRUE,,,1,
+SC002,SilkRoad Motors - Whitefield,2025-12-01,15:00,TRUE,,,3,
+SC002,SilkRoad Motors - Whitefield,2025-12-01,16:00,FALSE,VINGEN10004,Engine Diagnostics,1.5,Tech-236
+SC002,SilkRoad Motors - Whitefield,2025-12-01,17:00,TRUE,,,2.5,
+SC002,SilkRoad Motors - Whitefield,2025-12-02,09:00,TRUE,,,2,
+SC002,SilkRoad Motors - Whitefield,2025-12-02,10:00,TRUE,,,1,
+SC002,SilkRoad Motors - Whitefield,2025-12-02,11:00,TRUE,,,1.5,
+SC002,SilkRoad Motors - Whitefield,2025-12-02,12:00,TRUE,,,3,
+SC002,SilkRoad Motors - Whitefield,2025-12-02,13:00,FALSE,VINGEN10004,Battery Check,3,Tech-258
+SC002,SilkRoad Motors - Whitefield,2025-12-02,14:00,FALSE,VINGEN10008,Battery Check,1.5,Tech-586
+SC002,SilkRoad Motors - Whitefield,2025-12-02,15:00,FALSE,VINGEN10000,Tire Rotation,2,Tech-313
+SC002,SilkRoad Motors - Whitefield,2025-12-02,16:00,TRUE,,,3,
+SC002,SilkRoad Motors - Whitefield,2025-12-02,17:00,TRUE,,,2.5,
+SC002,SilkRoad Motors - Whitefield,2025-12-03,09:00,FALSE,VINGEN10008,Battery Check,1,Tech-991
+SC002,SilkRoad Motors - Whitefield,2025-12-03,10:00,TRUE,,,3,
+SC002,SilkRoad Motors - Whitefield,2025-12-03,11:00,TRUE,,,1,
+SC002,SilkRoad Motors - Whitefield,2025-12-03,12:00,FALSE,VINGEN10001,Tire Rotation,1.5,Tech-317
+SC002,SilkRoad Motors - Whitefield,2025-12-03,13:00,FALSE,VINGEN10004,Oil Change,1,Tech-866
+SC002,SilkRoad Motors - Whitefield,2025-12-03,14:00,TRUE,,,1.5,
+SC002,SilkRoad Motors - Whitefield,2025-12-03,15:00,TRUE,,,1,
+SC002,SilkRoad Motors - Whitefield,2025-12-03,16:00,TRUE,,,1.5,
+SC002,SilkRoad Motors - Whitefield,2025-12-03,17:00,FALSE,VINGEN10007,Oil Change,1.5,Tech-474
+SC002,SilkRoad Motors - Whitefield,2025-12-04,09:00,TRUE,,,3,
+SC002,SilkRoad Motors - Whitefield,2025-12-04,10:00,FALSE,VINGEN10001,Brake Inspection,3,Tech-164
+SC002,SilkRoad Motors - Whitefield,2025-12-04,11:00,TRUE,,,1.5,
+SC002,SilkRoad Motors - Whitefield,2025-12-04,12:00,FALSE,VINGEN10005,Engine Diagnostics,1.5,Tech-435
+SC002,SilkRoad Motors - Whitefield,2025-12-04,13:00,FALSE,VINGEN10009,Engine Diagnostics,2,Tech-712
+SC002,SilkRoad Motors - Whitefield,2025-12-04,14:00,FALSE,VINGEN10005,Battery Check,1.5,Tech-145
+SC002,SilkRoad Motors - Whitefield,2025-12-04,15:00,FALSE,VINGEN10008,Engine Diagnostics,2,Tech-183
+SC002,SilkRoad Motors - Whitefield,2025-12-04,16:00,FALSE,VINGEN10002,Oil Change,2,Tech-751
+SC002,SilkRoad Motors - Whitefield,2025-12-04,17:00,TRUE,,,3,
+SC002,SilkRoad Motors - Whitefield,2025-12-05,09:00,FALSE,VINGEN10004,Coolant System Check,2.5,Tech-345
+SC002,SilkRoad Motors - Whitefield,2025-12-05,10:00,FALSE,VINGEN10006,Engine Diagnostics,1.5,Tech-113
+SC002,SilkRoad Motors - Whitefield,2025-12-05,11:00,TRUE,,,1.5,
+SC002,SilkRoad Motors - Whitefield,2025-12-05,12:00,FALSE,VINGEN10003,Coolant System Check,1.5,Tech-813
+SC002,SilkRoad Motors - Whitefield,2025-12-05,13:00,TRUE,,,1,
+SC002,SilkRoad Motors - Whitefield,2025-12-05,14:00,FALSE,VINGEN10007,Tire Rotation,1,Tech-648
+SC002,SilkRoad Motors - Whitefield,2025-12-05,15:00,FALSE,VINGEN10003,Tire Rotation,2,Tech-970
+SC002,SilkRoad Motors - Whitefield,2025-12-05,16:00,TRUE,,,2.5,
+SC002,SilkRoad Motors - Whitefield,2025-12-05,17:00,TRUE,,,2,
+SC002,SilkRoad Motors - Whitefield,2025-12-06,09:00,TRUE,,,1.5,
+SC002,SilkRoad Motors - Whitefield,2025-12-06,10:00,FALSE,VINGEN10002,Tire Rotation,2.5,Tech-219
+SC002,SilkRoad Motors - Whitefield,2025-12-06,11:00,TRUE,,,2,
+SC002,SilkRoad Motors - Whitefield,2025-12-06,12:00,TRUE,,,1,
+SC002,SilkRoad Motors - Whitefield,2025-12-06,13:00,FALSE,VINGEN10004,Coolant System Check,2.5,Tech-220
+SC002,SilkRoad Motors - Whitefield,2025-12-06,14:00,FALSE,VINGEN10009,Coolant System Check,1.5,Tech-200
+SC002,SilkRoad Motors - Whitefield,2025-12-06,15:00,TRUE,,,1.5,
+SC002,SilkRoad Motors - Whitefield,2025-12-06,16:00,TRUE,,,3,
+SC002,SilkRoad Motors - Whitefield,2025-12-06,17:00,TRUE,,,2.5,
+SC003,Nandi Autohaus - Koramangala,2025-11-23,09:00,TRUE,,,1.5,
+SC003,Nandi Autohaus - Koramangala,2025-11-23,10:00,TRUE,,,2.5,
+SC003,Nandi Autohaus - Koramangala,2025-11-23,11:00,TRUE,,,3,
+SC003,Nandi Autohaus - Koramangala,2025-11-23,12:00,FALSE,VINGEN10001,Brake Inspection,2,Tech-813
+SC003,Nandi Autohaus - Koramangala,2025-11-23,13:00,FALSE,VINGEN10001,Oil Change,1,Tech-213
+SC003,Nandi Autohaus - Koramangala,2025-11-23,14:00,FALSE,VINGEN10002,Brake Inspection,2.5,Tech-705
+SC003,Nandi Autohaus - Koramangala,2025-11-23,15:00,TRUE,,,2.5,
+SC003,Nandi Autohaus - Koramangala,2025-11-23,16:00,FALSE,VINGEN10004,Coolant System Check,1.5,Tech-149
+SC003,Nandi Autohaus - Koramangala,2025-11-23,17:00,TRUE,,,2,
+SC003,Nandi Autohaus - Koramangala,2025-11-24,09:00,FALSE,VINGEN10000,Battery Check,2.5,Tech-710
+SC003,Nandi Autohaus - Koramangala,2025-11-24,10:00,FALSE,VINGEN10005,Brake Inspection,1.5,Tech-613
+SC003,Nandi Autohaus - Koramangala,2025-11-24,11:00,FALSE,VINGEN10003,Engine Diagnostics,2.5,Tech-263
+SC003,Nandi Autohaus - Koramangala,2025-11-24,12:00,FALSE,VINGEN10002,Oil Change,3,Tech-164
+SC003,Nandi Autohaus - Koramangala,2025-11-24,13:00,FALSE,VINGEN10000,Coolant System Check,3,Tech-705
+SC003,Nandi Autohaus - Koramangala,2025-11-24,14:00,TRUE,,,1.5,
+SC003,Nandi Autohaus - Koramangala,2025-11-24,15:00,FALSE,VINGEN10003,Brake Inspection,1,Tech-726
+SC003,Nandi Autohaus - Koramangala,2025-11-24,16:00,FALSE,VINGEN10005,Coolant System Check,1,Tech-191
+SC003,Nandi Autohaus - Koramangala,2025-11-24,17:00,FALSE,VINGEN10007,Battery Check,2,Tech-394
+SC003,Nandi Autohaus - Koramangala,2025-11-25,09:00,TRUE,,,1.5,
+SC003,Nandi Autohaus - Koramangala,2025-11-25,10:00,FALSE,VINGEN10008,Coolant System Check,3,Tech-539
+SC003,Nandi Autohaus - Koramangala,2025-11-25,11:00,TRUE,,,3,
+SC003,Nandi Autohaus - Koramangala,2025-11-25,12:00,TRUE,,,1.5,
+SC003,Nandi Autohaus - Koramangala,2025-11-25,13:00,TRUE,,,2.5,
+SC003,Nandi Autohaus - Koramangala,2025-11-25,14:00,TRUE,,,2,
+SC003,Nandi Autohaus - Koramangala,2025-11-25,15:00,TRUE,,,1.5,
+SC003,Nandi Autohaus - Koramangala,2025-11-25,16:00,TRUE,,,1.5,
+SC003,Nandi Autohaus - Koramangala,2025-11-25,17:00,TRUE,,,2.5,
+SC003,Nandi Autohaus - Koramangala,2025-11-26,09:00,FALSE,VINGEN10009,Brake Inspection,1.5,Tech-847
+SC003,Nandi Autohaus - Koramangala,2025-11-26,10:00,TRUE,,,2,
+SC003,Nandi Autohaus - Koramangala,2025-11-26,11:00,TRUE,,,3,
+SC003,Nandi Autohaus - Koramangala,2025-11-26,12:00,FALSE,VINGEN10006,Brake Inspection,1.5,Tech-451
+SC003,Nandi Autohaus - Koramangala,2025-11-26,13:00,FALSE,VINGEN10008,Battery Check,2,Tech-138
+SC003,Nandi Autohaus - Koramangala,2025-11-26,14:00,FALSE,VINGEN10008,Tire Rotation,3,Tech-579
+SC003,Nandi Autohaus - Koramangala,2025-11-26,15:00,TRUE,,,1.5,
+SC003,Nandi Autohaus - Koramangala,2025-11-26,16:00,FALSE,VINGEN10008,Battery Check,1,Tech-775
+SC003,Nandi Autohaus - Koramangala,2025-11-26,17:00,TRUE,,,1,
+SC003,Nandi Autohaus - Koramangala,2025-11-27,09:00,FALSE,VINGEN10001,Oil Change,2.5,Tech-805
+SC003,Nandi Autohaus - Koramangala,2025-11-27,10:00,FALSE,VINGEN10002,Tire Rotation,1,Tech-693
+SC003,Nandi Autohaus - Koramangala,2025-11-27,11:00,TRUE,,,2,
+SC003,Nandi Autohaus - Koramangala,2025-11-27,12:00,FALSE,VINGEN10005,Battery Check,3,Tech-323
+SC003,Nandi Autohaus - Koramangala,2025-11-27,13:00,TRUE,,,2,
+SC003,Nandi Autohaus - Koramangala,2025-11-27,14:00,FALSE,VINGEN10004,Battery Check,1,Tech-712
+SC003,Nandi Autohaus - Koramangala,2025-11-27,15:00,TRUE,,,2.5,
+SC003,Nandi Autohaus - Koramangala,2025-11-27,16:00,TRUE,,,1.5,
+SC003,Nandi Autohaus - Koramangala,2025-11-27,17:00,TRUE,,,2,
+SC003,Nandi Autohaus - Koramangala,2025-11-28,09:00,TRUE,,,1,
+SC003,Nandi Autohaus - Koramangala,2025-11-28,10:00,TRUE,,,3,
+SC003,Nandi Autohaus - Koramangala,2025-11-28,11:00,TRUE,,,1,
+SC003,Nandi Autohaus - Koramangala,2025-11-28,12:00,TRUE,,,2,
+SC003,Nandi Autohaus - Koramangala,2025-11-28,13:00,TRUE,,,1,
+SC003,Nandi Autohaus - Koramangala,2025-11-28,14:00,FALSE,VINGEN10006,Battery Check,2,Tech-590
+SC003,Nandi Autohaus - Koramangala,2025-11-28,15:00,FALSE,VINGEN10001,Battery Check,1.5,Tech-297
+SC003,Nandi Autohaus - Koramangala,2025-11-28,16:00,FALSE,VINGEN10004,Battery Check,3,Tech-400
+SC003,Nandi Autohaus - Koramangala,2025-11-28,17:00,FALSE,VINGEN10006,Battery Check,2.5,Tech-856
+SC003,Nandi Autohaus - Koramangala,2025-11-29,09:00,FALSE,VINGEN10009,Engine Diagnostics,1.5,Tech-605
+SC003,Nandi Autohaus - Koramangala,2025-11-29,10:00,TRUE,,,2,
+SC003,Nandi Autohaus - Koramangala,2025-11-29,11:00,TRUE,,,1,
+SC003,Nandi Autohaus - Koramangala,2025-11-29,12:00,FALSE,VINGEN10009,Engine Diagnostics,3,Tech-755
+SC003,Nandi Autohaus - Koramangala,2025-11-29,13:00,FALSE,VINGEN10001,Battery Check,3,Tech-554
+SC003,Nandi Autohaus - Koramangala,2025-11-29,14:00,TRUE,,,2,
+SC003,Nandi Autohaus - Koramangala,2025-11-29,15:00,TRUE,,,1,
+SC003,Nandi Autohaus - Koramangala,2025-11-29,16:00,FALSE,VINGEN10003,Coolant System Check,3,Tech-857
+SC003,Nandi Autohaus - Koramangala,2025-11-29,17:00,TRUE,,,3,
+SC003,Nandi Autohaus - Koramangala,2025-11-30,09:00,TRUE,,,1.5,
+SC003,Nandi Autohaus - Koramangala,2025-11-30,10:00,TRUE,,,2,
+SC003,Nandi Autohaus - Koramangala,2025-11-30,11:00,FALSE,VINGEN10004,Engine Diagnostics,2,Tech-896
+SC003,Nandi Autohaus - Koramangala,2025-11-30,12:00,TRUE,,,1.5,
+SC003,Nandi Autohaus - Koramangala,2025-11-30,13:00,TRUE,,,2,
+SC003,Nandi Autohaus - Koramangala,2025-11-30,14:00,TRUE,,,3,
+SC003,Nandi Autohaus - Koramangala,2025-11-30,15:00,FALSE,VINGEN10006,Brake Inspection,3,Tech-920
+SC003,Nandi Autohaus - Koramangala,2025-11-30,16:00,TRUE,,,1.5,
+SC003,Nandi Autohaus - Koramangala,2025-11-30,17:00,FALSE,VINGEN10004,Tire Rotation,1.5,Tech-268
+SC003,Nandi Autohaus - Koramangala,2025-12-01,09:00,TRUE,,,3,
+SC003,Nandi Autohaus - Koramangala,2025-12-01,10:00,TRUE,,,1,
+SC003,Nandi Autohaus - Koramangala,2025-12-01,11:00,FALSE,VINGEN10004,Battery Check,2,Tech-850
+SC003,Nandi Autohaus - Koramangala,2025-12-01,12:00,TRUE,,,2,
+SC003,Nandi Autohaus - Koramangala,2025-12-01,13:00,TRUE,,,3,
+SC003,Nandi Autohaus - Koramangala,2025-12-01,14:00,TRUE,,,1,
+SC003,Nandi Autohaus - Koramangala,2025-12-01,15:00,TRUE,,,3,
+SC003,Nandi Autohaus - Koramangala,2025-12-01,16:00,FALSE,VINGEN10003,Tire Rotation,2,Tech-720
+SC003,Nandi Autohaus - Koramangala,2025-12-01,17:00,TRUE,,,1.5,
+SC003,Nandi Autohaus - Koramangala,2025-12-02,09:00,TRUE,,,3,
+SC003,Nandi Autohaus - Koramangala,2025-12-02,10:00,TRUE,,,2.5,
+SC003,Nandi Autohaus - Koramangala,2025-12-02,11:00,TRUE,,,1.5,
+SC003,Nandi Autohaus - Koramangala,2025-12-02,12:00,TRUE,,,3,
+SC003,Nandi Autohaus - Koramangala,2025-12-02,13:00,FALSE,VINGEN10003,Oil Change,1,Tech-188
+SC003,Nandi Autohaus - Koramangala,2025-12-02,14:00,TRUE,,,2,
+SC003,Nandi Autohaus - Koramangala,2025-12-02,15:00,TRUE,,,1.5,
+SC003,Nandi Autohaus - Koramangala,2025-12-02,16:00,FALSE,VINGEN10007,Oil Change,2.5,Tech-115
+SC003,Nandi Autohaus - Koramangala,2025-12-02,17:00,TRUE,,,3,
+SC003,Nandi Autohaus - Koramangala,2025-12-03,09:00,TRUE,,,1,
+SC003,Nandi Autohaus - Koramangala,2025-12-03,10:00,TRUE,,,2.5,
+SC003,Nandi Autohaus - Koramangala,2025-12-03,11:00,FALSE,VINGEN10003,Battery Check,1.5,Tech-194
+SC003,Nandi Autohaus - Koramangala,2025-12-03,12:00,TRUE,,,2.5,
+SC003,Nandi Autohaus - Koramangala,2025-12-03,13:00,TRUE,,,1,
+SC003,Nandi Autohaus - Koramangala,2025-12-03,14:00,TRUE,,,2.5,
+SC003,Nandi Autohaus - Koramangala,2025-12-03,15:00,FALSE,VINGEN10003,Engine Diagnostics,1,Tech-637
+SC003,Nandi Autohaus - Koramangala,2025-12-03,16:00,TRUE,,,1,
+SC003,Nandi Autohaus - Koramangala,2025-12-03,17:00,TRUE,,,1.5,
+SC003,Nandi Autohaus - Koramangala,2025-12-04,09:00,FALSE,VINGEN10008,Oil Change,2,Tech-206
+SC003,Nandi Autohaus - Koramangala,2025-12-04,10:00,TRUE,,,1.5,
+SC003,Nandi Autohaus - Koramangala,2025-12-04,11:00,TRUE,,,2.5,
+SC003,Nandi Autohaus - Koramangala,2025-12-04,12:00,TRUE,,,3,
+SC003,Nandi Autohaus - Koramangala,2025-12-04,13:00,TRUE,,,2,
+SC003,Nandi Autohaus - Koramangala,2025-12-04,14:00,TRUE,,,1.5,
+SC003,Nandi Autohaus - Koramangala,2025-12-04,15:00,FALSE,VINGEN10006,Oil Change,2.5,Tech-656
+SC003,Nandi Autohaus - Koramangala,2025-12-04,16:00,FALSE,VINGEN10008,Engine Diagnostics,2.5,Tech-566
+SC003,Nandi Autohaus - Koramangala,2025-12-04,17:00,FALSE,VINGEN10007,Tire Rotation,2.5,Tech-130
+SC003,Nandi Autohaus - Koramangala,2025-12-05,09:00,FALSE,VINGEN10004,Coolant System Check,3,Tech-307
+SC003,Nandi Autohaus - Koramangala,2025-12-05,10:00,FALSE,VINGEN10009,Tire Rotation,3,Tech-990
+SC003,Nandi Autohaus - Koramangala,2025-12-05,11:00,FALSE,VINGEN10003,Engine Diagnostics,2,Tech-327
+SC003,Nandi Autohaus - Koramangala,2025-12-05,12:00,TRUE,,,2.5,
+SC003,Nandi Autohaus - Koramangala,2025-12-05,13:00,TRUE,,,2.5,
+SC003,Nandi Autohaus - Koramangala,2025-12-05,14:00,TRUE,,,3,
+SC003,Nandi Autohaus - Koramangala,2025-12-05,15:00,FALSE,VINGEN10007,Coolant System Check,1.5,Tech-547
+SC003,Nandi Autohaus - Koramangala,2025-12-05,16:00,TRUE,,,2.5,
+SC003,Nandi Autohaus - Koramangala,2025-12-05,17:00,TRUE,,,1,
+SC003,Nandi Autohaus - Koramangala,2025-12-06,09:00,TRUE,,,3,
+SC003,Nandi Autohaus - Koramangala,2025-12-06,10:00,FALSE,VINGEN10001,Tire Rotation,3,Tech-746
+SC003,Nandi Autohaus - Koramangala,2025-12-06,11:00,FALSE,VINGEN10009,Engine Diagnostics,1.5,Tech-679
+SC003,Nandi Autohaus - Koramangala,2025-12-06,12:00,FALSE,VINGEN10009,Engine Diagnostics,1.5,Tech-922
+SC003,Nandi Autohaus - Koramangala,2025-12-06,13:00,TRUE,,,1,
+SC003,Nandi Autohaus - Koramangala,2025-12-06,14:00,FALSE,VINGEN10004,Battery Check,2.5,Tech-249
+SC003,Nandi Autohaus - Koramangala,2025-12-06,15:00,TRUE,,,2,
+SC003,Nandi Autohaus - Koramangala,2025-12-06,16:00,TRUE,,,2,
+SC003,Nandi Autohaus - Koramangala,2025-12-06,17:00,TRUE,,,1,
+SC004,Electronic City Autos,2025-11-23,09:00,TRUE,,,1.5,
+SC004,Electronic City Autos,2025-11-23,10:00,TRUE,,,3,
+SC004,Electronic City Autos,2025-11-23,11:00,TRUE,,,1.5,
+SC004,Electronic City Autos,2025-11-23,12:00,FALSE,VINGEN10002,Oil Change,1.5,Tech-828
+SC004,Electronic City Autos,2025-11-23,13:00,FALSE,VINGEN10004,Engine Diagnostics,2.5,Tech-261
+SC004,Electronic City Autos,2025-11-23,14:00,TRUE,,,2.5,
+SC004,Electronic City Autos,2025-11-23,15:00,FALSE,VINGEN10001,Oil Change,1,Tech-646
+SC004,Electronic City Autos,2025-11-23,16:00,TRUE,,,2,
+SC004,Electronic City Autos,2025-11-23,17:00,TRUE,,,1,
+SC004,Electronic City Autos,2025-11-24,09:00,TRUE,,,1,
+SC004,Electronic City Autos,2025-11-24,10:00,TRUE,,,1.5,
+SC004,Electronic City Autos,2025-11-24,11:00,TRUE,,,2.5,
+SC004,Electronic City Autos,2025-11-24,12:00,TRUE,,,3,
+SC004,Electronic City Autos,2025-11-24,13:00,FALSE,VINGEN10008,Tire Rotation,1,Tech-795
+SC004,Electronic City Autos,2025-11-24,14:00,FALSE,VINGEN10005,Brake Inspection,2,Tech-504
+SC004,Electronic City Autos,2025-11-24,15:00,FALSE,VINGEN10005,Oil Change,3,Tech-745
+SC004,Electronic City Autos,2025-11-24,16:00,TRUE,,,2.5,
+SC004,Electronic City Autos,2025-11-24,17:00,TRUE,,,3,
+SC004,Electronic City Autos,2025-11-25,09:00,TRUE,,,2,
+SC004,Electronic City Autos,2025-11-25,10:00,FALSE,VINGEN10005,Oil Change,2,Tech-131
+SC004,Electronic City Autos,2025-11-25,11:00,TRUE,,,1,
+SC004,Electronic City Autos,2025-11-25,12:00,TRUE,,,2.5,
+SC004,Electronic City Autos,2025-11-25,13:00,TRUE,,,3,
+SC004,Electronic City Autos,2025-11-25,14:00,FALSE,VINGEN10009,Coolant System Check,3,Tech-250
+SC004,Electronic City Autos,2025-11-25,15:00,FALSE,VINGEN10001,Oil Change,2,Tech-789
+SC004,Electronic City Autos,2025-11-25,16:00,FALSE,VINGEN10006,Brake Inspection,3,Tech-894
+SC004,Electronic City Autos,2025-11-25,17:00,FALSE,VINGEN10005,Coolant System Check,2,Tech-939
+SC004,Electronic City Autos,2025-11-26,09:00,TRUE,,,1,
+SC004,Electronic City Autos,2025-11-26,10:00,TRUE,,,3,
+SC004,Electronic City Autos,2025-11-26,11:00,FALSE,VINGEN10004,Engine Diagnostics,2.5,Tech-159
+SC004,Electronic City Autos,2025-11-26,12:00,TRUE,,,2.5,
+SC004,Electronic City Autos,2025-11-26,13:00,TRUE,,,1,
+SC004,Electronic City Autos,2025-11-26,14:00,FALSE,VINGEN10003,Battery Check,2,Tech-509
+SC004,Electronic City Autos,2025-11-26,15:00,TRUE,,,3,
+SC004,Electronic City Autos,2025-11-26,16:00,TRUE,,,2.5,
+SC004,Electronic City Autos,2025-11-26,17:00,TRUE,,,2.5,
+SC004,Electronic City Autos,2025-11-27,09:00,FALSE,VINGEN10008,Brake Inspection,3,Tech-836
+SC004,Electronic City Autos,2025-11-27,10:00,TRUE,,,1,
+SC004,Electronic City Autos,2025-11-27,11:00,TRUE,,,1,
+SC004,Electronic City Autos,2025-11-27,12:00,FALSE,VINGEN10004,Coolant System Check,1,Tech-486
+SC004,Electronic City Autos,2025-11-27,13:00,TRUE,,,3,
+SC004,Electronic City Autos,2025-11-27,14:00,TRUE,,,1.5,
+SC004,Electronic City Autos,2025-11-27,15:00,TRUE,,,1,
+SC004,Electronic City Autos,2025-11-27,16:00,TRUE,,,3,
+SC004,Electronic City Autos,2025-11-27,17:00,TRUE,,,2,
+SC004,Electronic City Autos,2025-11-28,09:00,FALSE,VINGEN10009,Engine Diagnostics,1.5,Tech-607
+SC004,Electronic City Autos,2025-11-28,10:00,TRUE,,,1.5,
+SC004,Electronic City Autos,2025-11-28,11:00,TRUE,,,1,
+SC004,Electronic City Autos,2025-11-28,12:00,FALSE,VINGEN10000,Brake Inspection,1.5,Tech-736
+SC004,Electronic City Autos,2025-11-28,13:00,TRUE,,,1.5,
+SC004,Electronic City Autos,2025-11-28,14:00,FALSE,VINGEN10003,Coolant System Check,2,Tech-290
+SC004,Electronic City Autos,2025-11-28,15:00,TRUE,,,1.5,
+SC004,Electronic City Autos,2025-11-28,16:00,TRUE,,,1.5,
+SC004,Electronic City Autos,2025-11-28,17:00,TRUE,,,1.5,
+SC004,Electronic City Autos,2025-11-29,09:00,FALSE,VINGEN10009,Oil Change,1,Tech-366
+SC004,Electronic City Autos,2025-11-29,10:00,TRUE,,,1,
+SC004,Electronic City Autos,2025-11-29,11:00,TRUE,,,2,
+SC004,Electronic City Autos,2025-11-29,12:00,TRUE,,,2.5,
+SC004,Electronic City Autos,2025-11-29,13:00,FALSE,VINGEN10004,Oil Change,2.5,Tech-965
+SC004,Electronic City Autos,2025-11-29,14:00,TRUE,,,1.5,
+SC004,Electronic City Autos,2025-11-29,15:00,TRUE,,,2.5,
+SC004,Electronic City Autos,2025-11-29,16:00,TRUE,,,3,
+SC004,Electronic City Autos,2025-11-29,17:00,TRUE,,,1,
+SC004,Electronic City Autos,2025-11-30,09:00,TRUE,,,1,
+SC004,Electronic City Autos,2025-11-30,10:00,TRUE,,,1,
+SC004,Electronic City Autos,2025-11-30,11:00,TRUE,,,2,
+SC004,Electronic City Autos,2025-11-30,12:00,TRUE,,,1,
+SC004,Electronic City Autos,2025-11-30,13:00,TRUE,,,1,
+SC004,Electronic City Autos,2025-11-30,14:00,TRUE,,,1.5,
+SC004,Electronic City Autos,2025-11-30,15:00,TRUE,,,1.5,
+SC004,Electronic City Autos,2025-11-30,16:00,TRUE,,,1.5,
+SC004,Electronic City Autos,2025-11-30,17:00,TRUE,,,2,
+SC004,Electronic City Autos,2025-12-01,09:00,TRUE,,,2,
+SC004,Electronic City Autos,2025-12-01,10:00,FALSE,VINGEN10008,Oil Change,3,Tech-758
+SC004,Electronic City Autos,2025-12-01,11:00,FALSE,VINGEN10000,Brake Inspection,2,Tech-594
+SC004,Electronic City Autos,2025-12-01,12:00,TRUE,,,3,
+SC004,Electronic City Autos,2025-12-01,13:00,TRUE,,,1.5,
+SC004,Electronic City Autos,2025-12-01,14:00,TRUE,,,3,
+SC004,Electronic City Autos,2025-12-01,15:00,FALSE,VINGEN10004,Battery Check,3,Tech-898
+SC004,Electronic City Autos,2025-12-01,16:00,FALSE,VINGEN10000,Battery Check,3,Tech-440
+SC004,Electronic City Autos,2025-12-01,17:00,FALSE,VINGEN10008,Engine Diagnostics,1.5,Tech-641
+SC004,Electronic City Autos,2025-12-02,09:00,FALSE,VINGEN10009,Oil Change,2,Tech-311
+SC004,Electronic City Autos,2025-12-02,10:00,TRUE,,,2.5,
+SC004,Electronic City Autos,2025-12-02,11:00,TRUE,,,2,
+SC004,Electronic City Autos,2025-12-02,12:00,TRUE,,,3,
+SC004,Electronic City Autos,2025-12-02,13:00,TRUE,,,1.5,
+SC004,Electronic City Autos,2025-12-02,14:00,FALSE,VINGEN10008,Battery Check,2,Tech-846
+SC004,Electronic City Autos,2025-12-02,15:00,TRUE,,,3,
+SC004,Electronic City Autos,2025-12-02,16:00,FALSE,VINGEN10008,Tire Rotation,3,Tech-508
+SC004,Electronic City Autos,2025-12-02,17:00,FALSE,VINGEN10006,Tire Rotation,1,Tech-260
+SC004,Electronic City Autos,2025-12-03,09:00,TRUE,,,1,
+SC004,Electronic City Autos,2025-12-03,10:00,FALSE,VINGEN10007,Battery Check,2,Tech-899
+SC004,Electronic City Autos,2025-12-03,11:00,FALSE,VINGEN10004,Brake Inspection,2,Tech-631
+SC004,Electronic City Autos,2025-12-03,12:00,FALSE,VINGEN10004,Brake Inspection,2.5,Tech-627
+SC004,Electronic City Autos,2025-12-03,13:00,FALSE,VINGEN10005,Tire Rotation,3,Tech-644
+SC004,Electronic City Autos,2025-12-03,14:00,FALSE,VINGEN10002,Battery Check,2,Tech-922
+SC004,Electronic City Autos,2025-12-03,15:00,TRUE,,,2,
+SC004,Electronic City Autos,2025-12-03,16:00,TRUE,,,3,
+SC004,Electronic City Autos,2025-12-03,17:00,TRUE,,,2.5,
+SC004,Electronic City Autos,2025-12-04,09:00,FALSE,VINGEN10005,Tire Rotation,2.5,Tech-879
+SC004,Electronic City Autos,2025-12-04,10:00,FALSE,VINGEN10001,Brake Inspection,1,Tech-771
+SC004,Electronic City Autos,2025-12-04,11:00,FALSE,VINGEN10009,Engine Diagnostics,1.5,Tech-227
+SC004,Electronic City Autos,2025-12-04,12:00,FALSE,VINGEN10006,Battery Check,1,Tech-396
+SC004,Electronic City Autos,2025-12-04,13:00,FALSE,VINGEN10009,Tire Rotation,3,Tech-485
+SC004,Electronic City Autos,2025-12-04,14:00,TRUE,,,3,
+SC004,Electronic City Autos,2025-12-04,15:00,TRUE,,,2,
+SC004,Electronic City Autos,2025-12-04,16:00,TRUE,,,1,
+SC004,Electronic City Autos,2025-12-04,17:00,FALSE,VINGEN10005,Brake Inspection,2,Tech-613
+SC004,Electronic City Autos,2025-12-05,09:00,TRUE,,,1,
+SC004,Electronic City Autos,2025-12-05,10:00,TRUE,,,2,
+SC004,Electronic City Autos,2025-12-05,11:00,TRUE,,,1.5,
+SC004,Electronic City Autos,2025-12-05,12:00,FALSE,VINGEN10003,Tire Rotation,2,Tech-793
+SC004,Electronic City Autos,2025-12-05,13:00,TRUE,,,2,
+SC004,Electronic City Autos,2025-12-05,14:00,FALSE,VINGEN10007,Oil Change,3,Tech-418
+SC004,Electronic City Autos,2025-12-05,15:00,TRUE,,,1.5,
+SC004,Electronic City Autos,2025-12-05,16:00,TRUE,,,2,
+SC004,Electronic City Autos,2025-12-05,17:00,FALSE,VINGEN10000,Oil Change,2,Tech-596
+SC004,Electronic City Autos,2025-12-06,09:00,TRUE,,,1.5,
+SC004,Electronic City Autos,2025-12-06,10:00,TRUE,,,1,
+SC004,Electronic City Autos,2025-12-06,11:00,TRUE,,,1.5,
+SC004,Electronic City Autos,2025-12-06,12:00,TRUE,,,1.5,
+SC004,Electronic City Autos,2025-12-06,13:00,FALSE,VINGEN10007,Tire Rotation,1,Tech-575
+SC004,Electronic City Autos,2025-12-06,14:00,TRUE,,,2.5,
+SC004,Electronic City Autos,2025-12-06,15:00,TRUE,,,1,
+SC004,Electronic City Autos,2025-12-06,16:00,FALSE,VINGEN10006,Brake Inspection,2,Tech-985
+SC004,Electronic City Autos,2025-12-06,17:00,FALSE,VINGEN10008,Coolant System Check,2,Tech-501
+SC005,Deccan Auto - Indiranagar,2025-11-23,09:00,TRUE,,,2,
+SC005,Deccan Auto - Indiranagar,2025-11-23,10:00,FALSE,VINGEN10003,Tire Rotation,3,Tech-942
+SC005,Deccan Auto - Indiranagar,2025-11-23,11:00,FALSE,VINGEN10000,Battery Check,2,Tech-578
+SC005,Deccan Auto - Indiranagar,2025-11-23,12:00,TRUE,,,1.5,
+SC005,Deccan Auto - Indiranagar,2025-11-23,13:00,FALSE,VINGEN10005,Battery Check,1.5,Tech-227
+SC005,Deccan Auto - Indiranagar,2025-11-23,14:00,FALSE,VINGEN10008,Oil Change,3,Tech-546
+SC005,Deccan Auto - Indiranagar,2025-11-23,15:00,TRUE,,,3,
+SC005,Deccan Auto - Indiranagar,2025-11-23,16:00,TRUE,,,3,
+SC005,Deccan Auto - Indiranagar,2025-11-23,17:00,FALSE,VINGEN10007,Tire Rotation,3,Tech-529
+SC005,Deccan Auto - Indiranagar,2025-11-24,09:00,TRUE,,,2,
+SC005,Deccan Auto - Indiranagar,2025-11-24,10:00,TRUE,,,1.5,
+SC005,Deccan Auto - Indiranagar,2025-11-24,11:00,TRUE,,,1.5,
+SC005,Deccan Auto - Indiranagar,2025-11-24,12:00,TRUE,,,2,
+SC005,Deccan Auto - Indiranagar,2025-11-24,13:00,FALSE,VINGEN10004,Oil Change,1,Tech-170
+SC005,Deccan Auto - Indiranagar,2025-11-24,14:00,TRUE,,,2,
+SC005,Deccan Auto - Indiranagar,2025-11-24,15:00,FALSE,VINGEN10000,Brake Inspection,1,Tech-999
+SC005,Deccan Auto - Indiranagar,2025-11-24,16:00,TRUE,,,3,
+SC005,Deccan Auto - Indiranagar,2025-11-24,17:00,TRUE,,,3,
+SC005,Deccan Auto - Indiranagar,2025-11-25,09:00,FALSE,VINGEN10001,Coolant System Check,2.5,Tech-888
+SC005,Deccan Auto - Indiranagar,2025-11-25,10:00,TRUE,,,1,
+SC005,Deccan Auto - Indiranagar,2025-11-25,11:00,FALSE,VINGEN10000,Battery Check,3,Tech-989
+SC005,Deccan Auto - Indiranagar,2025-11-25,12:00,TRUE,,,2.5,
+SC005,Deccan Auto - Indiranagar,2025-11-25,13:00,TRUE,,,3,
+SC005,Deccan Auto - Indiranagar,2025-11-25,14:00,TRUE,,,3,
+SC005,Deccan Auto - Indiranagar,2025-11-25,15:00,TRUE,,,1,
+SC005,Deccan Auto - Indiranagar,2025-11-25,16:00,TRUE,,,2.5,
+SC005,Deccan Auto - Indiranagar,2025-11-25,17:00,FALSE,VINGEN10009,Battery Check,2.5,Tech-898
+SC005,Deccan Auto - Indiranagar,2025-11-26,09:00,FALSE,VINGEN10005,Oil Change,3,Tech-546
+SC005,Deccan Auto - Indiranagar,2025-11-26,10:00,TRUE,,,1,
+SC005,Deccan Auto - Indiranagar,2025-11-26,11:00,TRUE,,,1,
+SC005,Deccan Auto - Indiranagar,2025-11-26,12:00,FALSE,VINGEN10000,Tire Rotation,1,Tech-612
+SC005,Deccan Auto - Indiranagar,2025-11-26,13:00,TRUE,,,1.5,
+SC005,Deccan Auto - Indiranagar,2025-11-26,14:00,TRUE,,,2,
+SC005,Deccan Auto - Indiranagar,2025-11-26,15:00,TRUE,,,3,
+SC005,Deccan Auto - Indiranagar,2025-11-26,16:00,FALSE,VINGEN10009,Brake Inspection,3,Tech-947
+SC005,Deccan Auto - Indiranagar,2025-11-26,17:00,TRUE,,,1.5,
+SC005,Deccan Auto - Indiranagar,2025-11-27,09:00,FALSE,VINGEN10009,Oil Change,1.5,Tech-144
+SC005,Deccan Auto - Indiranagar,2025-11-27,10:00,TRUE,,,1.5,
+SC005,Deccan Auto - Indiranagar,2025-11-27,11:00,TRUE,,,1.5,
+SC005,Deccan Auto - Indiranagar,2025-11-27,12:00,FALSE,VINGEN10005,Oil Change,3,Tech-619
+SC005,Deccan Auto - Indiranagar,2025-11-27,13:00,TRUE,,,2,
+SC005,Deccan Auto - Indiranagar,2025-11-27,14:00,TRUE,,,1,
+SC005,Deccan Auto - Indiranagar,2025-11-27,15:00,TRUE,,,1.5,
+SC005,Deccan Auto - Indiranagar,2025-11-27,16:00,FALSE,VINGEN10008,Engine Diagnostics,3,Tech-761
+SC005,Deccan Auto - Indiranagar,2025-11-27,17:00,TRUE,,,1,
+SC005,Deccan Auto - Indiranagar,2025-11-28,09:00,TRUE,,,1.5,
+SC005,Deccan Auto - Indiranagar,2025-11-28,10:00,FALSE,VINGEN10000,Tire Rotation,1.5,Tech-986
+SC005,Deccan Auto - Indiranagar,2025-11-28,11:00,TRUE,,,2.5,
+SC005,Deccan Auto - Indiranagar,2025-11-28,12:00,TRUE,,,1.5,
+SC005,Deccan Auto - Indiranagar,2025-11-28,13:00,FALSE,VINGEN10001,Coolant System Check,3,Tech-192
+SC005,Deccan Auto - Indiranagar,2025-11-28,14:00,FALSE,VINGEN10003,Tire Rotation,2.5,Tech-214
+SC005,Deccan Auto - Indiranagar,2025-11-28,15:00,FALSE,VINGEN10001,Coolant System Check,2,Tech-279
+SC005,Deccan Auto - Indiranagar,2025-11-28,16:00,TRUE,,,3,
+SC005,Deccan Auto - Indiranagar,2025-11-28,17:00,FALSE,VINGEN10002,Brake Inspection,1,Tech-476
+SC005,Deccan Auto - Indiranagar,2025-11-29,09:00,TRUE,,,3,
+SC005,Deccan Auto - Indiranagar,2025-11-29,10:00,FALSE,VINGEN10004,Tire Rotation,3,Tech-889
+SC005,Deccan Auto - Indiranagar,2025-11-29,11:00,TRUE,,,2.5,
+SC005,Deccan Auto - Indiranagar,2025-11-29,12:00,TRUE,,,1,
+SC005,Deccan Auto - Indiranagar,2025-11-29,13:00,FALSE,VINGEN10002,Engine Diagnostics,2,Tech-923
+SC005,Deccan Auto - Indiranagar,2025-11-29,14:00,FALSE,VINGEN10000,Coolant System Check,3,Tech-865
+SC005,Deccan Auto - Indiranagar,2025-11-29,15:00,FALSE,VINGEN10003,Tire Rotation,3,Tech-375
+SC005,Deccan Auto - Indiranagar,2025-11-29,16:00,FALSE,VINGEN10000,Battery Check,2.5,Tech-999
+SC005,Deccan Auto - Indiranagar,2025-11-29,17:00,FALSE,VINGEN10001,Tire Rotation,1.5,Tech-878
+SC005,Deccan Auto - Indiranagar,2025-11-30,09:00,TRUE,,,1.5,
+SC005,Deccan Auto - Indiranagar,2025-11-30,10:00,FALSE,VINGEN10009,Tire Rotation,2.5,Tech-291
+SC005,Deccan Auto - Indiranagar,2025-11-30,11:00,TRUE,,,3,
+SC005,Deccan Auto - Indiranagar,2025-11-30,12:00,FALSE,VINGEN10003,Tire Rotation,2.5,Tech-149
+SC005,Deccan Auto - Indiranagar,2025-11-30,13:00,TRUE,,,2.5,
+SC005,Deccan Auto - Indiranagar,2025-11-30,14:00,TRUE,,,2,
+SC005,Deccan Auto - Indiranagar,2025-11-30,15:00,TRUE,,,2,
+SC005,Deccan Auto - Indiranagar,2025-11-30,16:00,TRUE,,,3,
+SC005,Deccan Auto - Indiranagar,2025-11-30,17:00,TRUE,,,3,
+SC005,Deccan Auto - Indiranagar,2025-12-01,09:00,FALSE,VINGEN10004,Engine Diagnostics,1.5,Tech-151
+SC005,Deccan Auto - Indiranagar,2025-12-01,10:00,FALSE,VINGEN10008,Oil Change,2.5,Tech-533
+SC005,Deccan Auto - Indiranagar,2025-12-01,11:00,TRUE,,,2.5,
+SC005,Deccan Auto - Indiranagar,2025-12-01,12:00,FALSE,VINGEN10001,Brake Inspection,3,Tech-268
+SC005,Deccan Auto - Indiranagar,2025-12-01,13:00,FALSE,VINGEN10004,Battery Check,1,Tech-622
+SC005,Deccan Auto - Indiranagar,2025-12-01,14:00,TRUE,,,1,
+SC005,Deccan Auto - Indiranagar,2025-12-01,15:00,TRUE,,,1,
+SC005,Deccan Auto - Indiranagar,2025-12-01,16:00,TRUE,,,2,
+SC005,Deccan Auto - Indiranagar,2025-12-01,17:00,TRUE,,,2,
+SC005,Deccan Auto - Indiranagar,2025-12-02,09:00,TRUE,,,2,
+SC005,Deccan Auto - Indiranagar,2025-12-02,10:00,TRUE,,,2,
+SC005,Deccan Auto - Indiranagar,2025-12-02,11:00,TRUE,,,2.5,
+SC005,Deccan Auto - Indiranagar,2025-12-02,12:00,TRUE,,,1,
+SC005,Deccan Auto - Indiranagar,2025-12-02,13:00,TRUE,,,2,
+SC005,Deccan Auto - Indiranagar,2025-12-02,14:00,TRUE,,,1.5,
+SC005,Deccan Auto - Indiranagar,2025-12-02,15:00,FALSE,VINGEN10009,Tire Rotation,1,Tech-374
+SC005,Deccan Auto - Indiranagar,2025-12-02,16:00,TRUE,,,3,
+SC005,Deccan Auto - Indiranagar,2025-12-02,17:00,FALSE,VINGEN10000,Engine Diagnostics,2.5,Tech-590
+SC005,Deccan Auto - Indiranagar,2025-12-03,09:00,TRUE,,,1,
+SC005,Deccan Auto - Indiranagar,2025-12-03,10:00,TRUE,,,3,
+SC005,Deccan Auto - Indiranagar,2025-12-03,11:00,FALSE,VINGEN10006,Tire Rotation,2,Tech-224
+SC005,Deccan Auto - Indiranagar,2025-12-03,12:00,FALSE,VINGEN10000,Engine Diagnostics,1.5,Tech-467
+SC005,Deccan Auto - Indiranagar,2025-12-03,13:00,TRUE,,,2.5,
+SC005,Deccan Auto - Indiranagar,2025-12-03,14:00,FALSE,VINGEN10004,Oil Change,1,Tech-169
+SC005,Deccan Auto - Indiranagar,2025-12-03,15:00,TRUE,,,1,
+SC005,Deccan Auto - Indiranagar,2025-12-03,16:00,TRUE,,,1,
+SC005,Deccan Auto - Indiranagar,2025-12-03,17:00,FALSE,VINGEN10009,Oil Change,3,Tech-461
+SC005,Deccan Auto - Indiranagar,2025-12-04,09:00,FALSE,VINGEN10009,Engine Diagnostics,3,Tech-471
+SC005,Deccan Auto - Indiranagar,2025-12-04,10:00,TRUE,,,2,
+SC005,Deccan Auto - Indiranagar,2025-12-04,11:00,FALSE,VINGEN10009,Battery Check,3,Tech-899
+SC005,Deccan Auto - Indiranagar,2025-12-04,12:00,TRUE,,,2,
+SC005,Deccan Auto - Indiranagar,2025-12-04,13:00,FALSE,VINGEN10000,Tire Rotation,1,Tech-799
+SC005,Deccan Auto - Indiranagar,2025-12-04,14:00,FALSE,VINGEN10002,Oil Change,1.5,Tech-408
+SC005,Deccan Auto - Indiranagar,2025-12-04,15:00,TRUE,,,1.5,
+SC005,Deccan Auto - Indiranagar,2025-12-04,16:00,TRUE,,,1,
+SC005,Deccan Auto - Indiranagar,2025-12-04,17:00,TRUE,,,1.5,
+SC005,Deccan Auto - Indiranagar,2025-12-05,09:00,TRUE,,,3,
+SC005,Deccan Auto - Indiranagar,2025-12-05,10:00,TRUE,,,1.5,
+SC005,Deccan Auto - Indiranagar,2025-12-05,11:00,TRUE,,,1,
+SC005,Deccan Auto - Indiranagar,2025-12-05,12:00,FALSE,VINGEN10002,Tire Rotation,1,Tech-341
+SC005,Deccan Auto - Indiranagar,2025-12-05,13:00,TRUE,,,1.5,
+SC005,Deccan Auto - Indiranagar,2025-12-05,14:00,TRUE,,,2,
+SC005,Deccan Auto - Indiranagar,2025-12-05,15:00,FALSE,VINGEN10005,Tire Rotation,2.5,Tech-790
+SC005,Deccan Auto - Indiranagar,2025-12-05,16:00,TRUE,,,2,
+SC005,Deccan Auto - Indiranagar,2025-12-05,17:00,FALSE,VINGEN10001,Brake Inspection,3,Tech-151
+SC005,Deccan Auto - Indiranagar,2025-12-06,09:00,FALSE,VINGEN10007,Tire Rotation,3,Tech-847
+SC005,Deccan Auto - Indiranagar,2025-12-06,10:00,TRUE,,,3,
+SC005,Deccan Auto - Indiranagar,2025-12-06,11:00,FALSE,VINGEN10004,Coolant System Check,1.5,Tech-179
+SC005,Deccan Auto - Indiranagar,2025-12-06,12:00,TRUE,,,2.5,
+SC005,Deccan Auto - Indiranagar,2025-12-06,13:00,FALSE,VINGEN10000,Battery Check,1,Tech-137
+SC005,Deccan Auto - Indiranagar,2025-12-06,14:00,TRUE,,,1,
+SC005,Deccan Auto - Indiranagar,2025-12-06,15:00,FALSE,VINGEN10004,Tire Rotation,3,Tech-994
+SC005,Deccan Auto - Indiranagar,2025-12-06,16:00,FALSE,VINGEN10007,Engine Diagnostics,1,Tech-493
+SC005,Deccan Auto - Indiranagar,2025-12-06,17:00,TRUE,,,2,

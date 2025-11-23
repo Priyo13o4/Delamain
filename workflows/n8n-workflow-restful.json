@@ -1,0 +1,764 @@
+{
+  "nodes": [
+    {
+      "parameters": {
+        "path": "agentic/telematics",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "c83769ec-792e-474e-8fbe-bdb0b509cdaa",
+      "name": "Webhook: GET /agentic/telematics",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        64,
+        3152
+      ],
+      "webhookId": "agentic-telematics"
+    },
+    {
+      "parameters": {
+        "path": "agentic/service/history",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "ddd72acf-b046-491c-a34b-a42081efa95f",
+      "name": "Webhook: GET /agentic/service/history",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        64,
+        3360
+      ],
+      "webhookId": "agentic-service-history"
+    },
+    {
+      "parameters": {
+        "path": "agentic/service/vehicles",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "d6030235-da9e-45b0-af83-1705dc97853f",
+      "name": "Webhook: GET /agentic/service/vehicles",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        64,
+        3552
+      ],
+      "webhookId": "agentic-service-vehicles"
+    },
+    {
+      "parameters": {
+        "path": "agentic/service/dealerships",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "61db63ec-8655-4e15-9182-58f17a4c08cd",
+      "name": "Webhook: GET /agentic/service/dealerships",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        64,
+        3760
+      ],
+      "webhookId": "agentic-service-dealerships"
+    },
+    {
+      "parameters": {
+        "path": "agentic/service/parts",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "3f60e25e-10bd-48b4-9f60-96388138854a",
+      "name": "Webhook: GET /agentic/service/parts",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        64,
+        3952
+      ],
+      "webhookId": "agentic-service-parts"
+    },
+    {
+      "parameters": {
+        "path": "agentic/service/availability",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "52624ef0-81cb-4c48-8ae4-85f393dfbb83",
+      "name": "Webhook: GET /agentic/service/availability",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        64,
+        4160
+      ],
+      "webhookId": "agentic-service-availability"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "agentic/service/book",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "c387e779-c388-43f5-a2bb-66906b2d43bb",
+      "name": "Webhook: POST /agentic/service/book",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        64,
+        4352
+      ],
+      "webhookId": "agentic-service-book"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1BQqISNEhJMpd_4RemEd_VXps8Kl4UZESmqTbCgYq-7g",
+          "mode": "list",
+          "cachedResultName": "Vehicle_PM_Database",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1BQqISNEhJMpd_4RemEd_VXps8Kl4UZESmqTbCgYq-7g/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1979606111,
+          "mode": "list",
+          "cachedResultName": "Telematics",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1BQqISNEhJMpd_4RemEd_VXps8Kl4UZESmqTbCgYq-7g/edit#gid=1979606111"
+        },
+        "options": {
+          "returnAllMatches": "returnAllMatches"
+        }
+      },
+      "id": "72a05b35-c633-4acb-9ef4-0c4da4546302",
+      "name": "Get Telematics Data",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.4,
+      "position": [
+        464,
+        3152
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "5ufNUvyGGX358J27",
+          "name": "Google Sheets account(Priyo)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Smart filter telematics with webhook query params preserved - returns either fleet summary or single-vehicle time series\nconst webhookData = $('Webhook: GET /agentic/telematics').first().json;\nconst query = webhookData.query || {};\nconst allRows = $input.all();\n\n// Extract query parameters (flexible matching)\nconst vehicleId = query.vehicle_id || query.vehicleId || query.id || null;\nconst vin = query.vin || query.VIN || null;\n\nlet filtered = [];\n\n// Filter by vehicle_id or id (convert to string for comparison)\nif (vehicleId) {\n  const searchId = vehicleId.toString();\n  filtered = allRows.filter(item =>\n    item.json.vehicle_id?.toString() === searchId\n  );\n}\n// Filter by VIN\nelse if (vin) {\n  filtered = allRows.filter(item => item.json.vin === vin);\n}\n// If no ID provided, build fleet summary of faulty vehicles\nelse {\n  const vehicleMap = new Map();\n\n  // Group by VIN to find latest reading and collect all recent codes\n  for (const item of allRows) {\n    const row = item.json;\n    const v = row.vin;\n    if (!v) continue;\n\n    const timestamp = new Date(row.timestamp).getTime();\n\n    if (!vehicleMap.has(v)) {\n      vehicleMap.set(v, { latest: { ...row, timestamp }, historyCodes: new Set() });\n    }\n\n    const entry = vehicleMap.get(v);\n\n    // Update latest reading\n    if (timestamp > entry.latest.timestamp) {\n      entry.latest = { ...row, timestamp };\n    }\n\n    // Collect any DTC codes found in this window\n    if (row.dtc_codes && row.dtc_codes.toString().trim().length > 0) {\n      const codes = row.dtc_codes.split(',').map(c => c.trim()).filter(c => c);\n      codes.forEach(c => entry.historyCodes.add(c));\n    }\n  }\n\n  const faultyVehicles = [];\n\n  for (const [vinKey, data] of vehicleMap.entries()) {\n    const row = data.latest;\n    const activeCodes = row.dtc_codes ? row.dtc_codes.split(',').map(c => c.trim()).filter(c => c) : [];\n    const activeSet = new Set(activeCodes);\n\n    // Check for sensor anomalies in latest reading\n    const isOverheating = parseFloat(row.coolant_temp) > 105;\n    const isBatteryLow = parseFloat(row.battery_voltage) < 11.0;\n\n    // Determine if there are any issues (active or historical)\n    const hasActiveFault = activeCodes.length > 0 || isOverheating || isBatteryLow;\n    const hasHistoryFault = data.historyCodes.size > 0;\n\n    if (hasActiveFault || hasHistoryFault) {\n      const reportCodes = [];\n\n      // Add active DTC codes\n      activeCodes.forEach(c => reportCodes.push(c));\n      if (isOverheating) reportCodes.push('SENSOR_OVERHEAT_WARNING');\n      if (isBatteryLow) reportCodes.push('SENSOR_BATTERY_CRITICAL');\n\n      // Add intermittent codes (in history but not currently active)\n      data.historyCodes.forEach(c => {\n        if (!activeSet.has(c)) {\n          reportCodes.push(`INTERMITTENT_${c}`);\n        }\n      });\n\n      faultyVehicles.push({\n        vehicle_id: row.vehicle_id,\n        vin: row.vin,\n        brand: row.brand,\n        model: row.model,\n        dealership: row.dealership,\n        dtc_codes: reportCodes,\n        timestamp: new Date(row.timestamp).toISOString(),\n        status: hasActiveFault ? 'Active Issue' : 'Intermittent/Cleared'\n      });\n    }\n  }\n\n  // Sort by most recent timestamp and optionally cap list size (e.g., 20)\n  faultyVehicles.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));\n  const maxVehicles = 20;\n  const limited = faultyVehicles.slice(0, maxVehicles);\n\n  if (limited.length > 0) {\n    return { json: {\n      mode: 'fleet_summary',\n      status: 'faults_detected',\n      count: limited.length,\n      vehicles: limited,\n      note: `Up to ${maxVehicles} most recent faulty vehicles are shown. Includes vehicles with active faults, sensor anomalies, or intermittent codes from recent history.`\n    }};\n  } else {\n    return { json: {\n      mode: 'fleet_summary',\n      status: 'no_faults_detected',\n      count: 0,\n      vehicles: [],\n      message: 'No vehicles currently reporting faults.'\n    }};\n  }\n}\n\n// Return all time-series data for specific vehicle\nif (filtered.length > 0) {\n  const readings = filtered.map(item => {\n    const row = item.json;\n    return {\n      vehicle_id: row.vehicle_id,\n      vin: row.vin,\n      brand: row.brand,\n      model: row.model,\n      dealership: row.dealership,\n      timestamp: row.timestamp,\n      coolant_temp: parseFloat(row.coolant_temp),\n      engine_load: parseFloat(row.engine_load),\n      rpm: parseFloat(row.rpm),\n      speed_kmh: parseFloat(row.speed_kmh),\n      vibration_level: parseFloat(row.vibration_level),\n      battery_voltage: parseFloat(row.battery_voltage),\n      dtc_codes: row.dtc_codes ? row.dtc_codes.split(',').filter(code => code.trim()) : []\n    };\n  });\n\n  // Sort by timestamp (most recent first)\n  readings.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));\n\n  return { json: {\n    vehicle_id: readings[0].vehicle_id,\n    vin: readings[0].vin,\n    brand: readings[0].brand,\n    model: readings[0].model,\n    dealership: readings[0].dealership,\n    total_readings: readings.length,\n    readings: readings\n  }};\n}\n\n// No match found for provided ID\nreturn { json: { error: 'Vehicle not found' } };"
+      },
+      "id": "5608d5fd-ec4b-40d3-ad76-114cd7868fa6",
+      "name": "Format Telematics Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        672,
+        3152
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Smart filter service history with webhook query params preserved\nconst webhookData = $('Webhook: GET /agentic/service/history').first().json;\nconst query = webhookData.query || {};\nconst body = webhookData.body || {};\nconst allRows = $input.all();\n\n// Extract query parameters (flexible matching)\nconst vin = query.vin || query.VIN || body.vin || body.VIN || null;\nconst vehicleId = query.vehicle_id || query.vehicleId || body.vehicle_id || body.vehicleId || null;\n\n// Require at least one parameter\nif (!vin && !vehicleId) {\n  return { json: { error: 'vehicle_id or vin parameter required' } };\n}\n\nlet filteredRows = [];\n\n// If VIN provided, filter by VIN directly\nif (vin) {\n  filteredRows = allRows.filter(item => item.json.vin === vin);\n}\n// If vehicle_id provided, we MUST look it up in the vehicle_id column\nelse if (vehicleId) {\n  const searchId = vehicleId.toString();\n  filteredRows = allRows.filter(item => \n    item.json.vehicle_id && item.json.vehicle_id.toString() === searchId\n  );\n}\n\n// Transform filtered results into array format for response\nconst history = filteredRows.map(item => ({\n  date: item.json.date,\n  service_type: item.json.service_type,\n  problem: item.json.problem,\n  solution: item.json.solution,\n  parts_replaced: item.json.parts_replaced,\n  labor_hours: parseFloat(item.json.labor_hours || 0),\n  cost_usd: parseFloat(item.json.cost_usd || 0),\n  technician: item.json.technician,\n  mileage: parseInt(item.json.mileage || 0),\n  vehicle_company: item.json.vehicle_company,\n  service_status: item.json.service_status,\n  dealership: item.json.dealership || null\n}));\n\n// Return as single JSON object with array\nreturn { json: { history } };"
+      },
+      "id": "525efa66-cd40-4f6d-b000-785b643518b3",
+      "name": "Format History Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        672,
+        3360
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1BQqISNEhJMpd_4RemEd_VXps8Kl4UZESmqTbCgYq-7g",
+          "mode": "list",
+          "cachedResultName": "Vehicle_PM_Database",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1BQqISNEhJMpd_4RemEd_VXps8Kl4UZESmqTbCgYq-7g/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1979606111,
+          "mode": "list",
+          "cachedResultName": "Telematics",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1BQqISNEhJMpd_4RemEd_VXps8Kl4UZESmqTbCgYq-7g/edit#gid=1979606111"
+        },
+        "options": {
+          "returnAllMatches": "returnAllMatches"
+        }
+      },
+      "id": "fd2f61c4-b9e3-4bb8-8a8a-6fbd3b422eaa",
+      "name": "Get vehicles summary data",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.4,
+      "position": [
+        464,
+        3552
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "5ufNUvyGGX358J27",
+          "name": "Google Sheets account(Priyo)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Vehicles summary - list unique vehicles with basic info\nconst allRows = $input.all();\n\nconst byVin = new Map();\nfor (const item of allRows) {\n  const r = item.json;\n  if (!byVin.has(r.vin)) {\n    byVin.set(r.vin, {\n      vin: r.vin,\n      vehicle_id: r.vehicle_id || null,\n      brand: r.brand || r.vehicle_company || null,\n      model: r.model || null,\n      dealership: r.dealership || null\n    });\n  }\n}\n\nreturn { json: { vehicles: Array.from(byVin.values()) } };"
+      },
+      "id": "556730f9-7b9e-4f6c-a3a9-28dc56375853",
+      "name": "Format Vehicles Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        672,
+        3552
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "id": "fd5a4498-3311-40f0-a513-8f256ccdac7d",
+      "name": "Respond Vehicles",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        864,
+        3552
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1BQqISNEhJMpd_4RemEd_VXps8Kl4UZESmqTbCgYq-7g",
+          "mode": "list",
+          "cachedResultName": "Vehicle_PM_Database",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1BQqISNEhJMpd_4RemEd_VXps8Kl4UZESmqTbCgYq-7g/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1979606111,
+          "mode": "list",
+          "cachedResultName": "Telematics",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1BQqISNEhJMpd_4RemEd_VXps8Kl4UZESmqTbCgYq-7g/edit#gid=1979606111"
+        },
+        "options": {
+          "returnAllMatches": "returnAllMatches"
+        }
+      },
+      "id": "8f55d292-9ee2-47ae-aa69-c1b62c544264",
+      "name": "Get dealerships data",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.4,
+      "position": [
+        464,
+        3760
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "5ufNUvyGGX358J27",
+          "name": "Google Sheets account(Priyo)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Dealerships summary - unique list of service centers\nconst allRows = $input.all();\n\nconst set = new Set();\nfor (const item of allRows) {\n  const d = item.json.dealership;\n  if (d) set.add(d);\n}\n\nreturn { json: { dealerships: Array.from(set) } };"
+      },
+      "id": "c3685a0c-7293-425b-890e-251afca2cc9e",
+      "name": "Format Dealerships Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        672,
+        3760
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "id": "d7757821-834e-42b1-bd8e-0a010c26fd87",
+      "name": "Respond Dealerships",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        864,
+        3760
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1BQqISNEhJMpd_4RemEd_VXps8Kl4UZESmqTbCgYq-7g",
+          "mode": "list",
+          "cachedResultName": "Vehicle_PM_Database",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1BQqISNEhJMpd_4RemEd_VXps8Kl4UZESmqTbCgYq-7g/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1019740326,
+          "mode": "list",
+          "cachedResultName": "part_costs",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1BQqISNEhJMpd_4RemEd_VXps8Kl4UZESmqTbCgYq-7g/edit#gid=1019740326"
+        },
+        "options": {
+          "returnAllMatches": "returnAllMatches"
+        }
+      },
+      "id": "cea3729e-4972-4e4a-a15d-4e266f1de9bd",
+      "name": "Get Part Costs Data",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.4,
+      "position": [
+        464,
+        3952
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "5ufNUvyGGX358J27",
+          "name": "Google Sheets account(Priyo)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Part costs query - filter by part_name, category, or return all\nconst webhookData = $('Webhook: GET /agentic/service/parts').first().json;\nconst query = webhookData.query || {};\nconst allRows = $input.all();\n\nconst partName = query.part_name || query.partName || null;\nconst category = query.category || null;\nconst partId = query.part_id || query.partId || null;\n\nlet filtered = allRows;\n\n// Filter by specific part_id\nif (partId) {\n  filtered = allRows.filter(item => item.json.part_id === partId);\n}\n// Filter by part_name (partial match, case-insensitive)\nelse if (partName) {\n  const search = partName.toLowerCase();\n  filtered = allRows.filter(item => \n    item.json.part_name?.toLowerCase().includes(search)\n  );\n}\n// Filter by category\nelse if (category) {\n  filtered = allRows.filter(item => \n    item.json.category?.toLowerCase() === category.toLowerCase()\n  );\n}\n\n// Transform to clean response\nconst parts = filtered.map(item => ({\n  part_id: item.json.part_id,\n  part_name: item.json.part_name,\n  category: item.json.category,\n  unit_cost_usd: parseFloat(item.json.unit_cost_usd || 0),\n  avg_labor_hours: parseFloat(item.json.avg_labor_hours || 0),\n  labor_rate_per_hour: parseFloat(item.json.labor_rate_per_hour || 75),\n  total_cost_estimate: parseFloat(item.json.total_cost_estimate || 0),\n  supplier: item.json.supplier,\n  warranty_months: parseInt(item.json.warranty_months || 0),\n  avg_lifespan_miles: parseInt(item.json.avg_lifespan_miles || 0)\n}));\n\nreturn { json: { parts, count: parts.length } };"
+      },
+      "id": "4c20af07-2254-4147-9d11-7f4766b3ceb0",
+      "name": "Format Part Costs Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        672,
+        3952
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "id": "138e9b85-7b7c-4629-af16-238ca1aab4fc",
+      "name": "Respond Part Costs",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        864,
+        3952
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1BQqISNEhJMpd_4RemEd_VXps8Kl4UZESmqTbCgYq-7g",
+          "mode": "list",
+          "cachedResultName": "Vehicle_PM_Database",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1BQqISNEhJMpd_4RemEd_VXps8Kl4UZESmqTbCgYq-7g/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1701328974,
+          "mode": "list",
+          "cachedResultName": "Service_center_schedule",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1BQqISNEhJMpd_4RemEd_VXps8Kl4UZESmqTbCgYq-7g/edit#gid=1701328974"
+        },
+        "options": {
+          "returnAllMatches": "returnAllMatches"
+        }
+      },
+      "id": "fe6db910-67af-4848-9aa2-d7c90e82a228",
+      "name": "Get Real Availability Data",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.4,
+      "position": [
+        464,
+        4160
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "5ufNUvyGGX358J27",
+          "name": "Google Sheets account(Priyo)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Real availability query - filter by date, center, and availability status\nconst webhookData = $('Webhook: GET /agentic/service/availability').first().json;\nconst query = webhookData.query || {};\nconst allRows = $input.all();\n\nconst date = query.date || null;\nconst centerName = query.center_name || query.centerName || query.center || null;\nconst centerId = query.center_id || query.centerId || null;\nconst onlyAvailable = query.only_available !== 'false'; // Default to true\n\nlet filtered = allRows;\n\n// Filter by center_name first (partial match) - this is the most common use case\nif (centerName) {\n  const search = centerName.toLowerCase();\n  filtered = filtered.filter(item => \n    item.json.center_name?.toLowerCase().includes(search)\n  );\n}\n// Filter by center_id only if centerName is not provided\nelse if (centerId) {\n  filtered = filtered.filter(item => item.json.center_id === centerId);\n}\n\n// Filter by date\nif (date) {\n  filtered = filtered.filter(item => item.json.date === date);\n}\n\n// Filter by availability\nif (onlyAvailable) {\n  filtered = filtered.filter(item => \n    item.json.is_available === 'True' || item.json.is_available === true\n  );\n}\n\n// Transform to clean response\nconst slots = filtered.map(item => ({\n  center_id: item.json.center_id,\n  center_name: item.json.center_name,\n  date: item.json.date,\n  time_slot: item.json.time_slot,\n  is_available: item.json.is_available === 'True' || item.json.is_available === true,\n  booked_by_vin: item.json.booked_by_vin || null,\n  service_type: item.json.service_type || null,\n  estimated_duration_hours: parseFloat(item.json.estimated_duration_hours || 0),\n  technician_assigned: item.json.technician_assigned || null\n}));\n\n// Group by date for easier consumption\nconst byDate = {};\nslots.forEach(slot => {\n  if (!byDate[slot.date]) {\n    byDate[slot.date] = [];\n  }\n  byDate[slot.date].push({\n    time_slot: slot.time_slot,\n    is_available: slot.is_available,\n    center_name: slot.center_name,\n    estimated_duration_hours: slot.estimated_duration_hours\n  });\n});\n\nreturn { json: { \n  slots, \n  count: slots.length,\n  grouped_by_date: byDate,\n  query_params: { date, centerName, centerId, onlyAvailable }\n} };"
+      },
+      "id": "d0cd86f2-6af6-4547-9f90-e305074225a4",
+      "name": "Format Real Availability Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        672,
+        4160
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "id": "6a2fe243-04a8-4f14-88ff-134bc243490a",
+      "name": "Respond Real Availability",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        864,
+        4160
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Booking endpoint - create booking with optional remarks\nconst body = $input.first().json.body || {};\nconst { vehicle_id, customer_name, time_slot, remarks } = body;\n\nif (!vehicle_id || !customer_name || !time_slot) {\n  return { json: { error: 'vehicle_id, customer_name and time_slot required' } };\n}\n\nconst booking = {\n  booking_reference_id: `BK-${Date.now().toString().slice(-8)}`,\n  vehicle_id,\n  customer_name,\n  time_slot,\n  remarks: remarks || null,\n  created_at: new Date().toISOString(),\n  status: 'confirmed'\n};\n\nreturn { json: booking };"
+      },
+      "id": "1b008ce5-a45c-4be7-8275-1d87e8d6da50",
+      "name": "Create Booking",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        464,
+        4352
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "id": "86939a7a-0bc5-4e83-ac39-069323b14dbb",
+      "name": "Respond Telematics1",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        864,
+        3152
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1BQqISNEhJMpd_4RemEd_VXps8Kl4UZESmqTbCgYq-7g",
+          "mode": "list",
+          "cachedResultName": "Vehicle_PM_Database",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1BQqISNEhJMpd_4RemEd_VXps8Kl4UZESmqTbCgYq-7g/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1486731914,
+          "mode": "list",
+          "cachedResultName": "ServiceHistory",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1BQqISNEhJMpd_4RemEd_VXps8Kl4UZESmqTbCgYq-7g/edit#gid=1486731914"
+        },
+        "options": {
+          "returnAllMatches": "returnAllMatches"
+        }
+      },
+      "id": "1744a42f-1066-482a-9b1a-fe20dfc3bd7d",
+      "name": "Get Service History1",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.4,
+      "position": [
+        464,
+        3360
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "5ufNUvyGGX358J27",
+          "name": "Google Sheets account(Priyo)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "id": "76a4de77-65d3-4243-a814-0d0caae7c963",
+      "name": "Respond History1",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        864,
+        3360
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {
+          "responseCode": 201
+        }
+      },
+      "id": "36055ac2-b26e-4636-8191-ed243641dd83",
+      "name": "Respond Booking1",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        672,
+        4352
+      ]
+    }
+  ],
+  "connections": {
+    "Webhook: GET /agentic/telematics": {
+      "main": [
+        [
+          {
+            "node": "Get Telematics Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook: GET /agentic/service/history": {
+      "main": [
+        [
+          {
+            "node": "Get Service History1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook: GET /agentic/service/vehicles": {
+      "main": [
+        [
+          {
+            "node": "Get vehicles summary data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook: GET /agentic/service/dealerships": {
+      "main": [
+        [
+          {
+            "node": "Get dealerships data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook: GET /agentic/service/parts": {
+      "main": [
+        [
+          {
+            "node": "Get Part Costs Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook: GET /agentic/service/availability": {
+      "main": [
+        [
+          {
+            "node": "Get Real Availability Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook: POST /agentic/service/book": {
+      "main": [
+        [
+          {
+            "node": "Create Booking",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Telematics Data": {
+      "main": [
+        [
+          {
+            "node": "Format Telematics Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Telematics Response": {
+      "main": [
+        [
+          {
+            "node": "Respond Telematics1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format History Response": {
+      "main": [
+        [
+          {
+            "node": "Respond History1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get vehicles summary data": {
+      "main": [
+        [
+          {
+            "node": "Format Vehicles Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Vehicles Response": {
+      "main": [
+        [
+          {
+            "node": "Respond Vehicles",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get dealerships data": {
+      "main": [
+        [
+          {
+            "node": "Format Dealerships Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Dealerships Response": {
+      "main": [
+        [
+          {
+            "node": "Respond Dealerships",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Part Costs Data": {
+      "main": [
+        [
+          {
+            "node": "Format Part Costs Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Part Costs Response": {
+      "main": [
+        [
+          {
+            "node": "Respond Part Costs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Real Availability Data": {
+      "main": [
+        [
+          {
+            "node": "Format Real Availability Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Real Availability Response": {
+      "main": [
+        [
+          {
+            "node": "Respond Real Availability",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Booking": {
+      "main": [
+        [
+          {
+            "node": "Respond Booking1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Service History1": {
+      "main": [
+        [
+          {
+            "node": "Format History Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "cecdb09c15d8b727dc6121fcf24e0219d5b5338214bfdb4fed28595e88e0029e"
+  }
+}

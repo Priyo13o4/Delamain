@@ -1,0 +1,35 @@
+part_id,part_name,category,unit_cost_usd,avg_labor_hours,labor_rate_per_hour,total_cost_estimate,supplier,warranty_months,avg_lifespan_miles
+PART0001,Thermostat,Engine,45,1.5,75,157.5,O'Reilly Automotive,12,38424
+PART0002,Water Pump,Engine,120,2,75,270,NAPA Auto,36,96736
+PART0003,Spark Plugs (set),Engine,35,1,75,110,Bosch,36,31335
+PART0004,Ignition Coil,Engine,85,0.5,75,122.5,O'Reilly Automotive,12,68350
+PART0005,Timing Belt,Engine,150,4,75,450,ACDelco,12,76889
+PART0006,Oil Filter,Engine,8,0.3,75,30.5,ACDelco,24,45439
+PART0007,Air Filter,Engine,15,0.2,75,30,AutoZone Parts,24,63396
+PART0008,Fuel Pump,Fuel,180,2.5,75,367.5,AutoZone Parts,36,53527
+PART0009,Fuel Filter,Fuel,25,0.5,75,62.5,ACDelco,12,70632
+PART0010,Radiator,Cooling,280,3,75,505,O'Reilly Automotive,36,54763
+PART0011,Coolant Sensor,Cooling,30,0.5,75,67.5,O'Reilly Automotive,36,70091
+PART0012,Radiator Hose,Cooling,40,1,75,115,O'Reilly Automotive,36,52794
+PART0013,Brake Pads (front),Brakes,60,1.5,75,172.5,AutoZone Parts,12,90953
+PART0014,Brake Pads (rear),Brakes,55,1.5,75,167.5,O'Reilly Automotive,24,42114
+PART0015,Brake Rotors (pair),Brakes,140,2,75,290,ACDelco,36,97793
+PART0016,Brake Fluid,Brakes,12,0.5,75,49.5,NAPA Auto,36,49064
+PART0017,Battery,Electrical,120,0.5,75,157.5,AutoZone Parts,36,85340
+PART0018,Alternator,Electrical,220,2,75,370,AutoZone Parts,24,50389
+PART0019,Starter Motor,Electrical,180,2.5,75,367.5,O'Reilly Automotive,24,41217
+PART0020,MAF Sensor,Electrical,95,0.5,75,132.5,AutoZone Parts,12,60122
+PART0021,Oxygen Sensor,Electrical,70,1,75,145,O'Reilly Automotive,12,42953
+PART0022,Tire (single),Tires,120,0.5,75,157.5,O'Reilly Automotive,24,41657
+PART0023,Tire Set (4),Tires,480,1.5,75,592.5,NAPA Auto,36,80086
+PART0024,Shock Absorber,Suspension,85,1.5,75,197.5,Bosch,36,34208
+PART0025,Control Arm,Suspension,110,2,75,260,ACDelco,36,96615
+PART0026,Transmission Fluid,Transmission,30,0.5,75,67.5,NAPA Auto,36,32002
+PART0027,Transmission Filter,Transmission,40,1,75,115,O'Reilly Automotive,36,39783
+PART0028,Catalytic Converter,Exhaust,450,3,75,675,Bosch,24,98306
+PART0029,Muffler,Exhaust,150,1.5,75,262.5,ACDelco,24,36738
+PART0030,EGR Valve,Exhaust,180,1.5,75,292.5,O'Reilly Automotive,36,69939
+PART0031,Wiper Blades,Accessories,25,0.2,75,40,AutoZone Parts,36,91629
+PART0032,Cabin Air Filter,Accessories,20,0.3,75,42.5,NAPA Auto,24,78419
+PART0033,Coolant Temperature Sensor,Cooling,25,0.5,75,62.5,O'Reilly Automotive,36,70000
+PART0034,Engine Block,Engine,800,8,75,1400,ACDelco,36,150000

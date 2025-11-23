@@ -1,0 +1,366 @@
+openapi: 3.0.3
+info:
+  title: Agentic Orchestration - Vehicle Predictive Maintenance (Logical Split API)
+  version: "1.0.4"
+  description: >
+    Clean logical API structure while retaining a single n8n webhook backend.
+    All paths ultimately route to the same webhook URL for processing.
+
+servers:
+  - url: "https://n8n.hacksters.tech/webhook"
+
+paths:
+
+  ######################################################
+  # TELEMATICS
+  ######################################################
+  /agentic/telematics:
+    get:
+      summary: Get real-time vehicle telemetry
+      parameters:
+        - in: query
+          name: vehicle_id
+          required: false
+          schema: { type: integer }
+        - in: query
+          name: vin
+          required: false
+          schema: { type: string }
+      responses:
+        "200":
+          description: Telemetry data
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TelematicsReading"
+
+
+  ######################################################
+  # SERVICE HISTORY
+  ######################################################
+  /agentic/service/history:
+    get:
+      summary: Get service history for a vehicle
+      parameters:
+        - in: query
+          name: vehicle_id
+          required: false
+          schema: { type: integer }
+        - in: query
+          name: vin
+          required: false
+          schema: { type: string }
+      responses:
+        "200":
+          description: Service history
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ServiceHistoryResponse"
+
+
+  ######################################################
+  # VEHICLES SUMMARY
+  ######################################################
+  /agentic/service/vehicles:
+    get:
+      summary: Get list of all vehicles in the fleet
+      responses:
+        "200":
+          description: Vehicles summary
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/VehiclesSummaryResponse"
+
+
+  ######################################################
+  # DEALERSHIPS
+  ######################################################
+  /agentic/service/dealerships:
+    get:
+      summary: Get list of all service centers/dealerships
+      responses:
+        "200":
+          description: Dealership list
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DealershipsSummaryResponse"
+
+
+  ######################################################
+  # PART COSTS
+  ######################################################
+  /agentic/service/parts:
+    get:
+      summary: Get part pricing and cost estimates
+      parameters:
+        - in: query
+          name: part_name
+          required: false
+          schema: { type: string }
+        - in: query
+          name: part_id
+          required: false
+          schema: { type: string }
+        - in: query
+          name: category
+          required: false
+          schema: { type: string }
+      responses:
+        "200":
+          description: Part cost results
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PartCostsResponse"
+
+
+  ######################################################
+  # REAL SERVICE CENTER AVAILABILITY
+  ######################################################
+  /agentic/service/availability:
+    get:
+      summary: Get real service center availability
+      parameters:
+        - in: query
+          name: date
+          required: false
+          schema: { type: string, format: date }
+        - in: query
+          name: center_name
+          required: false
+          schema: { type: string }
+        - in: query
+          name: center_id
+          required: false
+          schema: { type: string }
+        - in: query
+          name: only_available
+          required: false
+          schema: { type: boolean, default: true }
+      responses:
+        "200":
+          description: Availability results
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RealAvailabilityResponse"
+
+
+  ######################################################
+  # BOOK SERVICE APPOINTMENT (POST)
+  ######################################################
+  /agentic/service/book:
+    post:
+      summary: Book a service appointment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/BookingRequest"
+      responses:
+        "201":
+          description: Booking confirmation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BookingConfirmation"
+
+
+components:
+  schemas:
+
+    ######################################################
+    # TELEMATICS
+    ######################################################
+    TelematicsReading:
+      type: object
+      properties:
+        vehicle_id:
+          type: integer
+        vin:
+          type: string
+        brand:
+          type: string
+        model:
+          type: string
+        dealership:
+          type: string
+        total_readings:
+          type: integer
+        readings:
+          type: array
+          items:
+            type: object
+            properties:
+              vehicle_id: { type: integer }
+              vin: { type: string }
+              brand: { type: string }
+              model: { type: string }
+              dealership: { type: string }
+              timestamp:
+                type: string
+                format: date-time
+              coolant_temp: { type: number }
+              engine_load: { type: number }
+              rpm: { type: number }
+              speed_kmh: { type: number }
+              vibration_level: { type: number }
+              battery_voltage: { type: number }
+              dtc_codes:
+                type: array
+                items: { type: string }
+
+    ######################################################
+    # SERVICE HISTORY
+    ######################################################
+    ServiceHistoryResponse:
+      type: object
+      properties:
+        history:
+          type: array
+          items:
+            $ref: "#/components/schemas/ServiceRecord"
+
+    ServiceRecord:
+      type: object
+      properties:
+        vin: { type: string }
+        date: { type: string }
+        service_type: { type: string }
+        problem: { type: string }
+        solution: { type: string }
+        parts_replaced: { type: string }
+        labor_hours: { type: number }
+        cost_usd: { type: number }
+        technician: { type: string }
+        mileage: { type: integer }
+        vehicle_company: { type: string }
+        service_status: { type: string }
+        dealership: { type: string }
+
+    ######################################################
+    # VEHICLES
+    ######################################################
+    VehiclesSummaryResponse:
+      type: object
+      properties:
+        vehicles:
+          type: array
+          items:
+            type: object
+            properties:
+              vin: { type: string }
+              vehicle_id:
+                type: string
+                nullable: true
+              brand:
+                type: string
+                nullable: true
+              model:
+                type: string
+                nullable: true
+              dealership:
+                type: string
+                nullable: true
+
+    ######################################################
+    # DEALERSHIPS
+    ######################################################
+    DealershipsSummaryResponse:
+      type: object
+      properties:
+        dealerships:
+          type: array
+          items:
+            type: string
+
+    ######################################################
+    # PART COSTS
+    ######################################################
+    PartCostsResponse:
+      type: object
+      properties:
+        parts:
+          type: array
+          items:
+            type: object
+            properties:
+              part_id: { type: string }
+              part_name: { type: string }
+              category: { type: string }
+              unit_cost_usd: { type: number }
+              avg_labor_hours: { type: number }
+              labor_rate_per_hour: { type: number }
+              total_cost_estimate: { type: number }
+              supplier: { type: string }
+              warranty_months: { type: integer }
+              avg_lifespan_miles: { type: integer }
+        count: { type: integer }
+
+    ######################################################
+    # REAL AVAILABILITY
+    ######################################################
+    RealAvailabilityResponse:
+      type: object
+      properties:
+        slots:
+          type: array
+          items:
+            type: object
+            properties:
+              center_id: { type: string }
+              center_name: { type: string }
+              date: { type: string, format: date }
+              time_slot: { type: string }
+              is_available: { type: boolean }
+              booked_by_vin:
+                type: string
+                nullable: true
+              service_type:
+                type: string
+                nullable: true
+              estimated_duration_hours: { type: number }
+              technician_assigned:
+                type: string
+                nullable: true
+        count: { type: integer }
+        grouped_by_date:
+          type: object
+          additionalProperties:
+            type: array
+            items:
+              type: object
+              properties:
+                time_slot: { type: string }
+                is_available: { type: boolean }
+                center_name: { type: string }
+                estimated_duration_hours: { type: number }
+        query_params:
+          type: object
+
+    ######################################################
+    # BOOKING
+    ######################################################
+    BookingRequest:
+      type: object
+      required: [vehicle_id, customer_name, time_slot]
+      properties:
+        vehicle_id: { type: string }
+        customer_name: { type: string }
+        time_slot: { type: string }
+
+    BookingConfirmation:
+      type: object
+      properties:
+        booking_reference_id: { type: string }
+        vehicle_id: { type: string }
+        customer_name: { type: string }
+        time_slot: { type: string }
+        created_at:
+          type: string
+          format: date-time
+        status: { type: string }

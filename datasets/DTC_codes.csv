@@ -1,0 +1,48 @@
+code,description,severity,recommended_action
+P0101,Mass Air Flow (MAF) Circuit Range/Performance,Medium,Inspect/replace MAF sensor
+P0110,Intake Air Temperature Sensor Circuit,Low,Check intake air temp sensor
+P0128,Coolant Thermostat Below Regulating Temp,Medium,"Replace thermostat, check coolant flow"
+P0171,System Too Lean (Bank 1),High,"Check for vacuum leaks, fuel trim"
+P0174,System Too Lean (Bank 2),High,"Check for vacuum leaks, fuel trim"
+P0300,Random/Multiple Cylinder Misfire Detected,High,Inspect spark plugs/ignition coils
+P0301,Cylinder 1 Misfire Detected,High,"Inspect spark plug, ignition coil, compression"
+P0302,Cylinder 2 Misfire Detected,High,"Inspect spark plug, ignition coil, compression"
+P0420,Catalyst System Efficiency Below Threshold,High,"Check catalytic converter, O2 sensors"
+P0401,Exhaust Gas Recirculation (EGR) Flow Insufficient,Medium,Inspect EGR valve
+P0442,Evaporative Emission Control System Leak Detected (small),Low,Check fuel cap and EVAP lines
+P0455,Evaporative Emission Control System Leak Detected (gross),Medium,Check EVAP system for leaks
+P0500,Vehicle Speed Sensor Malfunction,Medium,Inspect VSS and wiring
+P0505,Idle Control System Malfunction,Low,Check idle air control valve
+P0620,Generator Control Circuit Malfunction,High,Inspect alternator/regulator
+P0700,Transmission Control System Malfunction,High,"Scan transmission, check fluid"
+P0715,Input/Turbine Speed Sensor Circuit,Medium,Check transmission speed sensor
+P0720,Output Speed Sensor Circuit Malfunction,Medium,Inspect output sensor
+P0740,Torque Converter Clutch Circuit Malfunction,High,Inspect TCC solenoid and transmission
+P0750,Shift Solenoid A Malfunction,Medium,Check shift solenoid and wiring
+P0760,Shift Solenoid C Malfunction,Medium,Check shift solenoid and wiring
+P0780,Shift Malfunction,High,Scan transmission for faults
+P1000,OBD Systems Readiness Test Not Complete,Low,Perform drive cycle
+P1101,MAF Sensor Intermittent/Erratic,Medium,Inspect/clean MAF sensor
+P1210,Fuel Pump/Subsystem Malfunction,High,Inspect fuel pump
+P1226,Turbocharger Boost Sensor A Circuit,High,Check turbocharger boost sensor
+P1234,Fuel Pressure Regulator Malfunction,High,Check fuel pressure regulator
+P1300,Ignition Coil Primary/Secondary Circuit Malfunction,High,Check ignition coils
+P1400,EVAP Control System Vent Valve Circuit Malfunction,Medium,Inspect EVAP vent valve
+P1506,Throttle Actuator Control Motor Current Range/Performance,High,Inspect throttle actuator
+P1600,ECM Processor Fault,High,ECM diagnostics required
+P1700,Transmission Trending Fault,High,Detailed transmission diagnosis
+P2002,Intake Manifold Runner Control Stuck Open,Medium,Inspect intake manifold runner
+P2100,Throttle Actuator Control System,High,Throttle system check
+P2138,Throttle/Pedal Position Sensor/Switch 'A'/'B' Correlation,High,Inspect throttle pedal and sensors
+P2187,System Too Lean at Idle,Medium,Check for vacuum leaks and idle control
+P2195,O2 Sensor Signal Biased/Lean (Bank 1 Sensor 1),Medium,Inspect O2 sensor and fuel delivery
+P2196,O2 Sensor Signal Biased/Rich (Bank 1 Sensor 1),Medium,Inspect O2 sensor and fuel delivery
+P2197,O2 Sensor Signal Biased/Lean (Bank 2 Sensor 1),Medium,Inspect O2 sensor and fuel delivery
+P2198,O2 Sensor Signal Biased/Rich (Bank 2 Sensor 1),Medium,Inspect O2 sensor and fuel delivery
+P2201,O2 Sensor Heater Circuit Malfunction,Medium,Check heater circuit and wiring
+P2501,Glow Plug Circuit/Open (diesel),Medium,Inspect glow plug circuit
+P2563,Turbocharger Boost Sensor Range/Performance,High,Inspect turbocharger system
+P2610,ECM/PCM Internal Engine Off Timer Performance,Low,ECM update/inspection
+P2630,Injector Control Circuit/Open,High,Inspect injectors and wiring
+P3000,Random/Multiple Cylinder Misfire Detected,High,Inspect spark and fuel system
+P3100,Ignition Monitor Circuit Malfunction,High,Inspect ignition monitoring circuits
