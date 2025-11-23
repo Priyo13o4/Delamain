@@ -38,14 +38,14 @@ export default function BusinessValue() {
     {
       metric: 'Failure Prediction',
       traditional: '0-24 hours',
-      delamain: '48+ hours',
+      delamain: 'Predictive',
       traditionalIcon: X,
       delamainIcon: Check,
     },
     {
       metric: 'Response Speed',
       traditional: 'Manual (hours)',
-      delamain: 'Autonomous (<5s)',
+      delamain: 'Autonomous',
       traditionalIcon: X,
       delamainIcon: Check,
     },
@@ -87,66 +87,7 @@ export default function BusinessValue() {
           </h2>
         </motion.div>
 
-        {/* ROI Calculator */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-16"
-        >
-          <Card className="border-teal/30 bg-gradient-to-br from-neutral-900 to-neutral-800" data-testid="roi-calculator">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-bold font-rajdhani text-white mb-6 text-center">
-                Calculate Your ROI
-              </h3>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                <div>
-                  <label className="block text-sm font-medium text-neutral-400 mb-2" data-testid="fleet-size-label">
-                    Fleet Size
-                  </label>
-                  <Input
-                    type="number"
-                    value={fleetSize}
-                    onChange={(e) => setFleetSize(parseInt(e.target.value) || 0)}
-                    min="1"
-                    data-testid="fleet-size-input"
-                  />
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-neutral-400 mb-2" data-testid="vehicle-value-label">
-                    Average Vehicle Value ($)
-                  </label>
-                  <Input
-                    type="number"
-                    value={vehicleValue}
-                    onChange={(e) => setVehicleValue(parseInt(e.target.value) || 0)}
-                    min="0"
-                    data-testid="vehicle-value-input"
-                  />
-                </div>
-              </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-neutral-950 rounded-lg p-6">
-                <div className="text-center" data-testid="roi-annual-savings">
-                  <p className="text-sm text-neutral-400 mb-2">Annual Savings</p>
-                  <p className="text-3xl font-bold font-rajdhani text-teal">${roi.savings}</p>
-                </div>
-                
-                <div className="text-center" data-testid="roi-downtime-reduction">
-                  <p className="text-sm text-neutral-400 mb-2">Downtime Reduction</p>
-                  <p className="text-3xl font-bold font-rajdhani text-teal">{roi.downtimeReduction}</p>
-                </div>
-                
-                <div className="text-center" data-testid="roi-payback">
-                  <p className="text-sm text-neutral-400 mb-2">ROI Timeline</p>
-                  <p className="text-3xl font-bold font-rajdhani text-teal">{roi.roiMonths} months</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </motion.div>
 
         {/* Comparison Table */}
         <motion.div

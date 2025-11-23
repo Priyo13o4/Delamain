@@ -20,10 +20,9 @@ export default function LiveDemo() {
   }
 
   const examplePrompts = [
-    '"Check my vehicle status"',
-    '"Schedule maintenance for Fleet-042"',
-    '"What\'s the cost estimate for brake service?"',
-    '"Show me upcoming appointments"',
+    '"Check my fleet health"',
+    '"Schedule a maintenance appointment"',
+    '"Get cost estimate for brake service"',
   ]
 
   return (
@@ -36,10 +35,6 @@ export default function LiveDemo() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-teal/10 mb-6 glow">
-            <MessageSquare className="w-10 h-10 text-teal" />
-          </div>
-          
           <h2 className="text-4xl md:text-5xl font-bold font-orbitron mb-4 text-white" data-testid="live-demo-title">
             Experience It <span className="text-teal">Yourself</span>
           </h2>
@@ -93,52 +88,17 @@ export default function LiveDemo() {
             transition={{ delay: 0.6, duration: 0.4 }}
           >
             <Button
-              size="lg"
-              className="text-xl px-12 py-6 font-bold shadow-2xl glow group"
+              size="sm"
+              className="px-6 py-3 font-semibold shadow-lg glow group rounded-full"
               onClick={handleLaunchChat}
               data-testid="launch-demo-btn"
             >
-              <Zap className="w-6 h-6 mr-2 group-hover:animate-pulse" />
+              <Zap className="w-4 h-4 mr-2 group-hover:animate-pulse" />
               Launch AI Chat Demo
             </Button>
           </motion.div>
 
-          {/* Floating Chat Preview */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.8, duration: 0.6 }}
-            className="mt-12 relative"
-          >
-            <div className="bg-neutral-950 border border-teal/30 rounded-xl p-6 max-w-md mx-auto">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-full bg-teal flex items-center justify-center">
-                  <MessageSquare className="w-5 h-5 text-white" />
-                </div>
-                <div className="text-left">
-                  <p className="text-sm font-semibold text-white">The Conductor</p>
-                  <p className="text-xs text-neutral-400">AI Fleet Assistant</p>
-                </div>
-                <div className="ml-auto flex gap-1">
-                  <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                  <span className="text-xs text-green-500">Online</span>
-                </div>
-              </div>
-              <div className="bg-neutral-900 rounded-lg p-3 text-left">
-                <p className="text-sm text-neutral-300">
-                  Hello! I'm The Conductor, your AI fleet assistant. How can I help you today?
-                </p>
-              </div>
-              <div className="mt-3 flex items-center gap-2 text-neutral-500 text-xs">
-                <div className="flex gap-1">
-                  <span className="w-2 h-2 rounded-full bg-neutral-500 animate-bounce" style={{ animationDelay: '0s' }}></span>
-                  <span className="w-2 h-2 rounded-full bg-neutral-500 animate-bounce" style={{ animationDelay: '0.2s' }}></span>
-                  <span className="w-2 h-2 rounded-full bg-neutral-500 animate-bounce" style={{ animationDelay: '0.4s' }}></span>
-                </div>
-                <span>Typing...</span>
-              </div>
-            </div>
-          </motion.div>
+
         </motion.div>
       </div>
     </section>

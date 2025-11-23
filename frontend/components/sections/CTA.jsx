@@ -97,7 +97,7 @@ export default function CTA() {
                 <p className="text-neutral-400 mb-6">
                   Explore market opportunity and technical architecture
                 </p>
-                <Button size="lg" variant="secondary" className="w-full" data-testid="view-pitch-btn">
+                <Button size="lg" variant="secondary" className="w-full" data-testid="view-pitch-btn" onClick={() => window.open('https://gamma.app/docs/Project-Delamain-srkabbek92hs0kh', '_blank')}>
                   View Full Pitch Deck
                 </Button>
               </CardContent>

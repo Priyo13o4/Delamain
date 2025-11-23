@@ -69,12 +69,9 @@ export default function ChatbotWidget() {
   }, [isOpen, chatbotLoaded])
 
   const samplePrompts = [
-    "Check my vehicle status",
-    "Schedule maintenance for Fleet-042",
-    "What's the cost estimate for brake service?",
-    "Show me upcoming appointments",
-    "Analyze fleet health report",
-    "Find nearest service centers",
+    "Check my fleet health",
+    "Schedule a maintenance appointment",
+    "Get cost estimate for brake service",
   ]
 
   const handlePromptClick = async (prompt) => {
